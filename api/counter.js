@@ -1,6 +1,6 @@
 // api/counter.js — uses Upstash Redis (replaces deprecated @vercel/kv)
 // GET  /api/counter        → returns current count
-// POST /api/counter        → increments, returns new value
+// POST /api/counter        → increments, returns new value 
 
 import { Redis } from "@upstash/redis";
 
