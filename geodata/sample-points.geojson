@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample-points",
+  "_metadata": {
+    "description": "Sample GeoJSON — replace with your real data",
+    "created": "2025-01-01",
+    "crs": "EPSG:4326"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample Point A",
+        "category": "Type 1",
+        "value": 42,
+        "notes": "Replace this with your real attribute data"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.1611, 32.7157]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample Point B",
+        "category": "Type 2",
+        "value": 87,
+        "notes": "Each feature can have any properties you need"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-117.0541, 32.8328]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample Polygon",
+        "category": "Area",
+        "value": 200,
+        "notes": "Polygons, lines, and points all work"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-117.20, 32.70],
+          [-117.10, 32.70],
+          [-117.10, 32.80],
+          [-117.20, 32.80],
+          [-117.20, 32.70]
+        ]]
+      }
+    }
+  ]
+}
