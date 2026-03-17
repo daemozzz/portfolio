@@ -1,4 +1,4 @@
-// api/posts.js — serves blog posts from /posts/*.md in GitHub repo
+// api/posts.js — serves blog posts from /posts/*.md in GitHub repo 
 // GET /api/posts             → list all posts
 // GET /api/posts?slug=name   → single post as HTML
 
