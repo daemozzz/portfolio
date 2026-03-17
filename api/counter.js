@@ -1,4 +1,4 @@
-// api/counter.js — Upstash Redis hit counter
+// api/counter.js — Upstash Redis hit counter 
 const { Redis } = require("@upstash/redis");
 
 module.exports = async function handler(req, res) {
