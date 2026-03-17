@@ -4,7 +4,7 @@
   "description": "Serverless API backend for daemoz.neocities.org",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "dependencies": {
     "@vercel/kv": "^1.0.0"
