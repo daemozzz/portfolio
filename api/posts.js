@@ -1,8 +1,8 @@
-// api/posts.js — serves blog posts from /posts/*.md in GitHub repo 
-// GET /api/posts             → list all posts
-// GET /api/posts?slug=name   → single post as HTML
-
 module.exports = async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "GET") return res.status(405).json({ error: "GET only" });
 
@@ -16,34 +16,30 @@ module.exports = async function handler(req, res) {
 
   try {
     if (slug) {
-      // Single post
       const safeslug = slug.replace(/[^a-zA-Z0-9_\-]/g, "");
       const r = await fetch(RAW_BASE + "/" + safeslug + ".md");
       if (!r.ok) return res.status(404).json({ error: "Post not found", slug: safeslug });
       const raw = await r.text();
-      const post = parseMarkdown(raw, safeslug);
-      return res.status(200).json({ ok: true, post });
+      return res.status(200).json({ ok: true, post: parseMarkdown(raw, safeslug) });
     }
 
-    // Post list
     const ghRes = await fetch(API_BASE, {
       headers: { "Accept": "application/vnd.github.v3+json", "User-Agent": "daemoz-portfolio" }
     });
 
     if (!ghRes.ok) {
-      console.error("GitHub API status:", ghRes.status);
       return res.status(200).json({ ok: true, posts: [], error: "GitHub API error: " + ghRes.status });
     }
 
     const files = await ghRes.json();
 
-    // Guard: if GitHub returned an error object instead of array
     if (!Array.isArray(files)) {
-      console.error("GitHub API returned:", JSON.stringify(files).slice(0, 200));
       return res.status(200).json({ ok: true, posts: [], error: "GitHub API unexpected response" });
     }
 
-    const mdFiles = files.filter(function(f) { return f.name.endsWith(".md") && f.name !== "README.md"; });
+    const mdFiles = files.filter(function(f) {
+      return f.name.endsWith(".md") && f.name !== "README.md";
+    });
 
     const postList = await Promise.all(
       mdFiles.slice(0, 20).map(async function(file) {
@@ -63,7 +59,6 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ ok: true, posts: postList });
 
   } catch (err) {
-    console.error("posts error:", err);
     return res.status(500).json({ ok: false, error: err.message });
   }
 };

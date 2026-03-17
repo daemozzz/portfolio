@@ -1,5 +1,8 @@
-// api/geodata.js — serves GeoJSON files from /geodata in GitHub repo 
 module.exports = async function handler(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "GET") return res.status(405).json({ error: "GET only" });
 
@@ -23,8 +26,7 @@ module.exports = async function handler(req, res) {
         var parts = bbox.split(",").map(Number);
         geojson.features = geojson.features.filter(function(f) {
           if (!f.geometry) return false;
-          var coords = flatCoords(f.geometry);
-          return coords.some(function(c) {
+          return flatCoords(f.geometry).some(function(c) {
             return c[0] >= parts[0] && c[0] <= parts[2] && c[1] >= parts[1] && c[1] <= parts[3];
           });
         });
