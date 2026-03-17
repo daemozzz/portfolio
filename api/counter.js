@@ -1,38 +1,27 @@
-// api/counter.js — uses Upstash Redis (replaces deprecated @vercel/kv)
-// GET  /api/counter        → returns current count
-// POST /api/counter        → increments, returns new value 
+// api/counter.js — Upstash Redis hit counter
+const { Redis } = require("@upstash/redis");
 
-import { Redis } from "@upstash/redis";
-
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(200).end();
 
-  // Upstash auto-reads UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN
-  // from env vars — injected automatically by the Vercel Marketplace integration
-  let redis;
-  try {
-    redis = new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN,
-    });
-  } catch (e) {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
     return res.status(200).json({ ok: false, error: "Redis not configured", count: 420133, fallback: true });
   }
 
-  const key = "hits:global";
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN,
+  });
 
   try {
     if (req.method === "POST") {
-      const count = await redis.incr(key);
+      const count = await redis.incr("hits:global");
       return res.status(200).json({ ok: true, count });
     }
-    if (req.method === "GET") {
-      const count = await redis.get(key) || 0;
-      return res.status(200).json({ ok: true, count });
-    }
-    return res.status(405).json({ error: "Method not allowed" });
+    const count = (await redis.get("hits:global")) || 0;
+    return res.status(200).json({ ok: true, count });
   } catch (err) {
     console.error("Redis error:", err.message);
-    return res.status(200).json({ ok: false, error: "Redis unavailable", count: 420133, fallback: true });
+    return res.status(200).json({ ok: false, error: err.message, count: 420133, fallback: true });
   }
-}
+};
