@@ -10,11 +10,9 @@ excerpt:  collection of the most-played tracks from 2008 across a few genres. Hi
 
 List - Does it work still
 
-<iframe id="playlist-frame" src="https://daemoz.neocities.org/misc/2008_playlist" 
-        style="width: 100%; border: none; background-color: white;" 
-        onload="this.style.height=this.contentWindow.document.body.scrollHeight+'px';">
+<iframe src="https://daemoz.neocities.org/misc/2008_playlist" 
+        style="width: 100%; aspect-ratio: 1 / 2; border: none; background-color: white;">
 </iframe>
-
 
 
 
