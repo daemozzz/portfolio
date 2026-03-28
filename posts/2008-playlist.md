@@ -10,4 +10,4 @@ excerpt:  collection of the most-played tracks from 2008 across a few genres. Hi
 
 List - Does it work still
 
-<iframe src="https://daemoz.neocities.org/misc/2008_playlist" title="2008" width="100%" height="300" style="border:none;"></iframe>
+<iframe src="https://daemoz.neocities.org/misc/2008_playlist" title="2008" width="100%" height="100%" style="border:none;"></iframe>
