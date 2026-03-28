@@ -1,6 +1,14 @@
+---
+title: 2008 Playlist — Interactive Test
+date: 2026-03-28
+category: MISC
+tags: [neocities, web, meta]
+excerpt:  collection of the most-played tracks from 2008 across a few genres. Highlights  **April 2008** specifically.
+---
+
 # 2008 Playlist — Club / Dance · R&B · Rock · Alt
 
-A curated collection of the most-played tracks from 2008 across four genres. Highlights in amber were charting in **April 2008** specifically.
+List - Does it work still
 
 <div id="playlist-root"></div>
 
