@@ -40,3 +40,4 @@ The API layer has three endpoints:
 ---
 
 *Posted from GitHub.com — no local dev environment required.*
+edit 4/14 to keep redis from going offline from inactivity
