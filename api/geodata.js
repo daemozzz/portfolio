@@ -1,3 +1,6 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
@@ -6,21 +9,32 @@ module.exports = async function handler(req, res) {
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "GET") return res.status(405).json({ error: "GET only" });
 
-  const GITHUB_USER   = process.env.GITHUB_USER   || "daemoz";
+  const GITHUB_USER   = process.env.GITHUB_USER   || "daemozzz";
   const GITHUB_REPO   = process.env.GITHUB_REPO   || "portfolio";
   const GITHUB_BRANCH = process.env.GITHUB_BRANCH || "main";
   const RAW_BASE = "https://raw.githubusercontent.com/" + GITHUB_USER + "/" + GITHUB_REPO + "/" + GITHUB_BRANCH + "/geodata";
   const API_BASE = "https://api.github.com/repos/" + GITHUB_USER + "/" + GITHUB_REPO + "/contents/geodata";
 
+  const localDir = path.join(process.cwd(), "geodata");
+
   const file = req.query.file;
   const bbox = req.query.bbox;
+  const category = req.query.category;
 
   try {
     if (file) {
       const safeName = file.replace(/[^a-zA-Z0-9_\-]/g, "");
-      const r = await fetch(RAW_BASE + "/" + safeName + ".geojson");
-      if (!r.ok) return res.status(404).json({ error: "Dataset not found", file: safeName });
-      var geojson = await r.json();
+      var geojson = null;
+
+      // Prefer local bundle — works on both `vercel dev` and deployed serverless
+      const localPath = path.join(localDir, safeName + ".geojson");
+      if (fs.existsSync(localPath)) {
+        geojson = JSON.parse(fs.readFileSync(localPath, "utf8"));
+      } else {
+        const r = await fetch(RAW_BASE + "/" + safeName + ".geojson");
+        if (!r.ok) return res.status(404).json({ error: "Dataset not found", file: safeName });
+        geojson = await r.json();
+      }
 
       if (bbox && geojson.features) {
         var parts = bbox.split(",").map(Number);
@@ -32,8 +46,26 @@ module.exports = async function handler(req, res) {
         });
       }
 
+      if (category && geojson.features) {
+        geojson.features = geojson.features.filter(function(f) {
+          return f.properties && f.properties.venue_category === category;
+        });
+      }
+
       res.setHeader("Content-Type", "application/geo+json");
       return res.status(200).json(geojson);
+    }
+
+    // Listing: prefer local dir
+    if (fs.existsSync(localDir)) {
+      const localFiles = fs.readdirSync(localDir)
+        .filter(function(n) { return n.endsWith(".geojson"); })
+        .map(function(n) {
+          const stat = fs.statSync(path.join(localDir, n));
+          const base = n.replace(".geojson", "");
+          return { name: base, size_bytes: stat.size, url: "/api/geodata?file=" + base };
+        });
+      return res.status(200).json({ ok: true, count: localFiles.length, datasets: localFiles });
     }
 
     const ghRes = await fetch(API_BASE, {

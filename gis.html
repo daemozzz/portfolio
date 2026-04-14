@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casino & Social Club Intel Map</title>
+  <meta name="description" content="Interactive map of US casinos, card clubs, tribal gaming, and racetracks.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0e14'/%3E%3Cpath d='M16 6 L26 16 L16 26 L6 16 Z' fill='%2358a6ff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="gis.css">
+  <script src="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="app-header-inner">
+      <div class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">CASINO INTEL</span>
+      </div>
+      <div class="header-meta">
+        <span class="meta-pill" id="venue-count">— venues</span>
+        <span class="meta-pill" id="venue-filtered" style="display:none;">— shown</span>
+        <span class="meta-pill meta-live"><span class="dot"></span> LIVE</span>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group filter-search">
+        <label class="filter-label">Search</label>
+        <input id="f-search" type="text" placeholder="Venue name…" autocomplete="off">
+      </div>
+
+      <div class="filter-group filter-group-state">
+        <label class="filter-label">State</label>
+        <button type="button" class="ms-button" id="ms-state-btn" aria-pressed="false">
+          <span class="ms-button-label is-placeholder">All states</span>
+          <span class="ms-button-arrow">▾</span>
+        </button>
+      </div>
+
+      <div class="filter-group filter-group-range">
+        <label class="filter-label">Min tables <span class="filter-hint" id="f-tables-val">any</span></label>
+        <input id="f-tables" type="range" min="0" max="100" step="1" value="0" disabled
+               title="Field not yet in dataset">
+      </div>
+
+      <div class="filter-group filter-group-range">
+        <label class="filter-label">Min geocode score <span class="filter-hint" id="f-geo-val">0</span></label>
+        <input id="f-geo" type="range" min="0" max="1" step="0.05" value="0">
+      </div>
+
+      <div class="filter-group filter-group-toggles">
+        <label class="toggle-chip">
+          <input id="f-hide-closed" type="checkbox">
+          <span>Hide closed</span>
+        </label>
+        <label class="toggle-chip">
+          <input id="f-has-website" type="checkbox">
+          <span>Has website</span>
+        </label>
+      </div>
+
+      <div class="filter-group filter-group-actions">
+        <button id="f-reset" class="btn-ghost btn-compact" type="button">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div id="map-shell">
+      <div id="map"></div>
+
+      <div id="map-loading" class="map-overlay">
+        <div class="spinner"></div>
+        <div class="overlay-text">Loading geodata…</div>
+      </div>
+
+      <div id="map-error" class="map-overlay" style="display:none;">
+        <div class="overlay-text overlay-err">Signal lost</div>
+        <div class="overlay-sub">Map data temporarily unavailable.</div>
+      </div>
+
+      <!-- Floating draggable state panel -->
+      <div id="state-panel" class="float-panel" hidden>
+        <div class="float-panel-header" id="state-panel-drag">
+          <span class="float-panel-title">STATES</span>
+          <div class="float-panel-actions">
+            <button type="button" class="float-panel-close" id="state-panel-close" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="float-panel-body">
+          <div class="ms-search-wrap">
+            <input type="text" class="ms-search" id="ms-state-search" placeholder="Filter states…" autocomplete="off">
+          </div>
+          <div class="ms-actions">
+            <button type="button" class="ms-mini" data-action="all">Select all</button>
+            <button type="button" class="ms-mini" data-action="none">Clear</button>
+          </div>
+          <div class="ms-list" id="ms-state-list" role="listbox"></div>
+        </div>
+      </div>
+
+      <div id="layer-panel" class="layer-panel">
+        <button id="layer-toggle-btn" class="layer-toggle-btn" aria-expanded="true">
+          <span>LAYERS</span>
+          <span class="layer-toggle-arrow">▾</span>
+        </button>
+        <div id="layer-panel-body" class="layer-panel-body">
+
+          <div class="layer-section-head">Basemap</div>
+          <div class="basemap-group" id="basemap-group">
+            <label class="basemap-option">
+              <input type="radio" name="basemap" value="liberty" checked>
+              <span class="basemap-label">Dark</span>
+            </label>
+            <label class="basemap-option">
+              <input type="radio" name="basemap" value="positron">
+              <span class="basemap-label">Light</span>
+            </label>
+            <label class="basemap-option">
+              <input type="radio" name="basemap" value="satellite">
+              <span class="basemap-label">Satellite</span>
+            </label>
+          </div>
+
+          <div class="layer-section-head">Choropleth</div>
+          <div class="layer-row">
+            <label>
+              <input type="radio" name="choropleth" value="none" checked>
+              <span class="cat-dot base-dot" style="background:var(--border-bright);"></span>
+              <span class="cat-label">None</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="radio" name="choropleth" value="state-regulation">
+              <span class="cat-dot base-dot"></span>
+              <span class="cat-label">State regulation</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="radio" name="choropleth" value="county-income">
+              <span class="cat-dot base-dot" style="background:linear-gradient(135deg,#0c4a6e,#5eead4);"></span>
+              <span class="cat-label">County median income</span>
+            </label>
+          </div>
+
+          <div class="layer-subpanel" id="reg-legend" hidden>
+            <div class="reg-row" data-reg="commercial"><span class="reg-dot"></span>Commercial</div>
+            <div class="reg-row" data-reg="tribal"><span class="reg-dot"></span>Tribal only</div>
+            <div class="reg-row" data-reg="limited"><span class="reg-dot"></span>Limited</div>
+            <div class="reg-row" data-reg="prohibited"><span class="reg-dot"></span>Prohibited</div>
+            <div class="reg-row" data-reg="unknown"><span class="reg-dot"></span>Unclassified</div>
+          </div>
+
+          <div class="layer-subpanel" id="income-legend" hidden>
+            <div class="reg-row"><span class="reg-dot" style="background:#0c4a6e"></span>&lt; $40k</div>
+            <div class="reg-row"><span class="reg-dot" style="background:#0e7490"></span>$40–55k</div>
+            <div class="reg-row"><span class="reg-dot" style="background:#14b8a6"></span>$55–70k</div>
+            <div class="reg-row"><span class="reg-dot" style="background:#5eead4"></span>$70–85k</div>
+            <div class="reg-row"><span class="reg-dot" style="background:#ccfbf1"></span>&gt; $85k</div>
+            <div class="reg-row"><span class="reg-dot" style="background:#334155"></span>No data</div>
+          </div>
+
+          <div class="layer-section-head">Boundaries</div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" id="f-tribal-lands">
+              <span class="cat-dot" style="background:rgba(167,139,250,0.3);border:1px dashed #a78bfa;"></span>
+              <span class="cat-label">Tribal reservations</span>
+              <span class="cat-count">312</span>
+            </label>
+          </div>
+
+          <div class="layer-section-head">Venue categories</div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" checked data-cat="Casino Hotel">
+              <span class="cat-dot" style="background:#f59e0b"></span>
+              <span class="cat-label">Casino Hotel</span>
+              <span class="cat-count" data-count-for="Casino Hotel">—</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" checked data-cat="Casino">
+              <span class="cat-dot" style="background:#ef4444"></span>
+              <span class="cat-label">Casino</span>
+              <span class="cat-count" data-count-for="Casino">—</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" checked data-cat="Tribal">
+              <span class="cat-dot" style="background:#8b5cf6"></span>
+              <span class="cat-label">Tribal</span>
+              <span class="cat-count" data-count-for="Tribal">—</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" checked data-cat="Racetrack">
+              <span class="cat-dot" style="background:#10b981"></span>
+              <span class="cat-label">Racetrack</span>
+              <span class="cat-count" data-count-for="Racetrack">—</span>
+            </label>
+          </div>
+          <div class="layer-row">
+            <label>
+              <input type="checkbox" checked data-cat="Poker / Card Club">
+              <span class="cat-dot" style="background:#3b82f6"></span>
+              <span class="cat-label">Poker / Card Club</span>
+              <span class="cat-count" data-count-for="Poker / Card Club">—</span>
+            </label>
+          </div>
+          <div class="layer-panel-footer">
+            <button id="fit-us-btn" class="btn-ghost">▸ Fit to US</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="gis.js"></script>
+</body>
+</html>

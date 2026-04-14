@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "description": "Gambling regulation classification per US state. STUB DATA — validate before production.",
+    "schema_version": 1,
+    "categories": {
+      "commercial": "Commercial casinos legal",
+      "tribal": "Tribal gaming only",
+      "limited": "Limited gaming (racinos, cardrooms, etc.)",
+      "prohibited": "No casino gaming",
+      "unknown": "Unclassified — needs research"
+    },
+    "last_reviewed": null
+  },
+  "states": {
+    "Alabama": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Alaska": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Arizona": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Arkansas": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "California": {
+      "regulation_type": "limited",
+      "notes": ""
+    },
+    "Colorado": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Connecticut": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Delaware": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "District of Columbia": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Florida": {
+      "regulation_type": "limited",
+      "notes": ""
+    },
+    "Georgia": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Hawaii": {
+      "regulation_type": "prohibited",
+      "notes": ""
+    },
+    "Idaho": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Illinois": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Indiana": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Iowa": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Kansas": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Kentucky": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Louisiana": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Maine": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Maryland": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Massachusetts": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Michigan": {
+      "regulation_type": "commercial",
+      "notes": ""
+    },
+    "Minnesota": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Mississippi": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Missouri": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Montana": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Nebraska": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Nevada": {
+      "regulation_type": "commercial",
+      "notes": ""
+    },
+    "New Hampshire": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "New Jersey": {
+      "regulation_type": "commercial",
+      "notes": ""
+    },
+    "New Mexico": {
+      "regulation_type": "tribal",
+      "notes": ""
+    },
+    "New York": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "North Carolina": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "North Dakota": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Ohio": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Oklahoma": {
+      "regulation_type": "tribal",
+      "notes": ""
+    },
+    "Oregon": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Pennsylvania": {
+      "regulation_type": "commercial",
+      "notes": ""
+    },
+    "Puerto Rico": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Rhode Island": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "South Carolina": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "South Dakota": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Tennessee": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Texas": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Utah": {
+      "regulation_type": "prohibited",
+      "notes": ""
+    },
+    "Vermont": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Virginia": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Washington": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "West Virginia": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Wisconsin": {
+      "regulation_type": "unknown",
+      "notes": ""
+    },
+    "Wyoming": {
+      "regulation_type": "unknown",
+      "notes": ""
+    }
+  }
+}

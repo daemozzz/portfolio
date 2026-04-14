@@ -1,0 +1,2826 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.73371,
+          29.785854
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-001",
+        "venue_name": "101 Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "101poker-club.com",
+        "street": "20900 Katy Fwy",
+        "city": "Katy",
+        "state": "Texas",
+        "zip": "77449",
+        "county": "Harris County",
+        "contact_known": "True",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.726661,
+          36.809763
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-002",
+        "venue_name": "500 Club Casino (copy)",
+        "venue_category": "Casino",
+        "website": "500clubcasino.com",
+        "street": "771 W Shaw Ave",
+        "city": "Clovis",
+        "state": "California",
+        "zip": "93612.0",
+        "county": "Fresno County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "190.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.279464,
+          38.309167
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-003",
+        "venue_name": "Ace & Vine",
+        "venue_category": "Poker / Card Club",
+        "website": "aceandvine.com",
+        "street": "505 Lincoln Ave",
+        "city": "Napa",
+        "state": "California",
+        "zip": "94558.0",
+        "county": "Napa County",
+        "contact_known": "True",
+        "naics_code": "722410.0",
+        "num_employees": "20.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.408082,
+          33.814921
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-004",
+        "venue_name": "Agua Caliente Casinos",
+        "venue_category": "Casino Hotel",
+        "website": "aguacalientecasinos.com",
+        "street": "32250 Bob Hope Dr",
+        "city": "Rancho Mirage",
+        "state": "California",
+        "zip": "92270.0",
+        "county": "Riverside County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "2130.0",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.411195,
+          29.533836
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-005",
+        "venue_name": "Alamo Card House 2",
+        "venue_category": "Poker / Card Club",
+        "website": "alamocardhouse.net",
+        "street": "10311 Perrin Beitel Rd",
+        "city": "San Antonio",
+        "state": "Texas",
+        "zip": "78217.0",
+        "county": "Bexar County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "7.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.365711,
+          34.608908
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-007",
+        "venue_name": "Apache Casino Hotel",
+        "venue_category": "Casino Hotel",
+        "website": "apachecasinohotel.com",
+        "street": "2315 E Gore Blvd",
+        "city": "Lawton",
+        "state": "Oklahoma",
+        "zip": "73501",
+        "county": "Comanche County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.410744,
+          37.627905
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-008",
+        "venue_name": "Artichoke Joe's Casino",
+        "venue_category": "Casino",
+        "website": "artichokejoes.com",
+        "street": "659 Huntington Ave",
+        "city": "San Bruno",
+        "state": "California",
+        "zip": "94066.0",
+        "county": "San Mateo County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "417.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.913393,
+          37.369752
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-010",
+        "venue_name": "Bay 101 Casino",
+        "venue_category": "Casino Hotel",
+        "website": "bay101.com",
+        "street": "1788 N 1st St",
+        "city": "San Jose",
+        "state": "California",
+        "zip": "95112.0",
+        "county": "Santa Clara County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "498.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.141451,
+          44.050338
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-011",
+        "venue_name": "Beach Poker Club",
+        "venue_category": "Casino",
+        "website": "beachpokerclub.com",
+        "street": "890 Seneca Rd Ste 700",
+        "city": "Eugene",
+        "state": "Oregon",
+        "zip": "97402.0",
+        "county": "Lane County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "6.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.208461,
+          40.627108
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-012",
+        "venue_name": "Bear River Casino",
+        "venue_category": "Casino Hotel",
+        "website": "bearrivercasino.com",
+        "street": "11 Bear Paws Way",
+        "city": "Loleta",
+        "state": "California",
+        "zip": "95551.0",
+        "county": "Humboldt County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "242.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.292087,
+          44.059736
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-013",
+        "venue_name": "Bend Poker Room",
+        "venue_category": "Poker / Card Club",
+        "website": "bendpokerroom.com",
+        "street": "917 NE Greenwood Ave",
+        "city": "Bend",
+        "state": "Oregon",
+        "zip": "97701",
+        "county": "Deschutes County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.998358,
+          40.885481
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-014",
+        "venue_name": "Blue Lake Casino",
+        "venue_category": "Casino Hotel",
+        "website": "bluelakecasino.com",
+        "street": "777 Casino Way",
+        "city": "Blue Lake",
+        "state": "California",
+        "zip": "95525",
+        "county": "Humboldt County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "312.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "manual",
+        "geocode_accuracy_score": "1",
+        "manual_review": "",
+        "operational_notes": "Geocodio matched wrong city (Eureka vs Blue Lake) - verify coordinates | Geocodio matched wrong city (Eureka vs Blue Lake) - verify coordinates",
+        "data_source": "zoominfo",
+        "full_address": "777 Casino Way, Blue Lake, California 95525",
+        "geocode_status": "geocoded"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.142638,
+          38.734512
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-016",
+        "venue_name": "Cache Creek Casino Resort",
+        "venue_category": "Casino Hotel",
+        "website": "cachecreek.com",
+        "street": "14455 Hwy 16",
+        "city": "Brooks",
+        "state": "California",
+        "zip": "95606.0",
+        "county": "Yolo County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "2273.0",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.067579,
+          37.982062
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-017",
+        "venue_name": "California Grand Casino",
+        "venue_category": "Casino",
+        "website": "californiagrandcasino.com",
+        "street": "5988 Pacheco Blvd",
+        "city": "Pacheco",
+        "state": "California",
+        "zip": "94553.0",
+        "county": "Contra Costa County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "117.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.482936,
+          44.790546
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-018",
+        "venue_name": "Canterbury Park",
+        "venue_category": "Poker / Card Club",
+        "website": "canterburypark.com",
+        "street": "1100 Canterbury Rd S",
+        "city": "Shakopee",
+        "state": "Minnesota",
+        "zip": "55379.0",
+        "county": "Scott County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "241.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.478963,
+          38.591492
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-019",
+        "venue_name": "Capitol Casino",
+        "venue_category": "Casino",
+        "website": "capitol-casino.com",
+        "street": "411 N 16th St",
+        "city": "Sacramento",
+        "state": "California",
+        "zip": "95811.0",
+        "county": "Sacramento County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "138.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.919503,
+          37.371415
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-024",
+        "venue_name": "Casino M8trix",
+        "venue_category": "Poker / Card Club",
+        "website": "casinom8trix.com",
+        "street": "1887 Matrix Blvd",
+        "city": "San Jose",
+        "state": "California",
+        "zip": "95110.0",
+        "county": "Santa Clara County",
+        "contact_known": "True",
+        "naics_code": "722410.0",
+        "num_employees": "466.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.801921,
+          36.683661
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-025",
+        "venue_name": "Casino Monterey - The Marina Club",
+        "venue_category": "Casino Hotel",
+        "website": "casinomonterey.com",
+        "street": "204 Carmel Ave",
+        "city": "Marina",
+        "state": "California",
+        "zip": "93933.0",
+        "county": "Monterey County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "21.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.991391,
+          33.32999
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-026",
+        "venue_name": "Casino Pauma",
+        "venue_category": "Casino",
+        "website": "casinopauma.com",
+        "street": "777 Pauma Reservation Rd",
+        "city": "Pauma Valley",
+        "state": "California",
+        "zip": "92061",
+        "county": "San Diego County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.33772,
+          31.900849
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-027",
+        "venue_name": "Celebrity Card Club",
+        "venue_category": "Poker / Card Club",
+        "website": "pokerodessa.com",
+        "street": "4803 Plaza Blvd Ste 202",
+        "city": "Odessa",
+        "state": "Texas",
+        "zip": "79762",
+        "county": "Ector County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.765125,
+          36.166138
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-030",
+        "venue_name": "Cherokee Nation Entertainment",
+        "venue_category": "Casino Hotel",
+        "website": "hardrockcasinotulsa.com",
+        "street": "777 W Cherokee St",
+        "city": "Tulsa",
+        "state": "Oklahoma",
+        "zip": "74015.0",
+        "county": "Rogers County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "140.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.750107,
+          34.916862
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-031",
+        "venue_name": "Choctaw Casinos & Resorts",
+        "venue_category": "Casino Hotel",
+        "website": "choctawcasinos.com",
+        "street": "1638 S George Nigh Expy",
+        "city": "McAlester",
+        "state": "Oklahoma",
+        "zip": "74501.0",
+        "county": "Pittsburg County",
+        "contact_known": "True",
+        "naics_code": "721110.0",
+        "num_employees": "531.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "0.83",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.087002,
+          34.60973
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-032",
+        "venue_name": "Chumash Casino Resort",
+        "venue_category": "Casino",
+        "website": "chumashcasino.com",
+        "street": "3400 Hwy 246",
+        "city": "Santa Ynez",
+        "state": "California",
+        "zip": "93460",
+        "county": "Santa Barbara County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.752287,
+          36.789354
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-033",
+        "venue_name": "Club One Casino",
+        "venue_category": "Casino",
+        "website": "clubonecasino.com",
+        "street": "3950 N Cedar Ave",
+        "city": "Fresno",
+        "state": "California",
+        "zip": "93726",
+        "county": "Fresno County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.859006,
+          38.703461
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-034",
+        "venue_name": "Coyote Valley Casino",
+        "venue_category": "Poker / Card Club",
+        "website": "coyotevalleycasino.com",
+        "street": "3250 Hwy 128",
+        "city": "Geyserville",
+        "state": "California",
+        "zip": "95441.0",
+        "county": "Sonoma County",
+        "contact_known": "True",
+        "naics_code": "722513.0",
+        "num_employees": "513.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.16611,
+          34.822691
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-036",
+        "venue_name": "Diamond Jim's Casino (copy)",
+        "venue_category": "Casino",
+        "website": "djimscasino.com",
+        "street": "118 20th St W",
+        "city": "Rosamond",
+        "state": "California",
+        "zip": "93560",
+        "county": "Kern County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "18.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "manual",
+        "geocode_accuracy_score": "1",
+        "manual_review": "",
+        "operational_notes": "PO Box address - place centroid only, needs real street address | PO Box address - place centroid only, needs real street address",
+        "data_source": "zoominfo",
+        "full_address": "118 20th St W, Rosamond, California 93560",
+        "geocode_status": "geocoded"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.657179,
+          40.427433
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-037",
+        "venue_name": "Diamond Mountain Casino Hotel",
+        "venue_category": "Casino Hotel",
+        "website": "dmcah.com",
+        "street": "900 Skyline Dr",
+        "city": "Susanville",
+        "state": "California",
+        "zip": "96130",
+        "county": "Lassen County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.034542,
+          43.041652
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-038",
+        "venue_name": "Downstream Casino Resort",
+        "venue_category": "Casino Hotel",
+        "website": "downstreamcasino.com",
+        "street": "10000 W Innovation Dr Ste 250",
+        "city": "Milwaukee",
+        "state": "Wisconsin",
+        "zip": "53226.0",
+        "county": "Milwaukee County",
+        "contact_known": "True",
+        "naics_code": "541618.0",
+        "num_employees": "3200.0",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.158125,
+          41.758615
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-039",
+        "venue_name": "Elk Valley Casino",
+        "venue_category": "Casino",
+        "website": "elkvalleycasino.com",
+        "street": "2332 Howland Hill Rd",
+        "city": "Crescent City",
+        "state": "California",
+        "zip": "95531.0",
+        "county": "Del Norte County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "144.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.526397,
+          29.737996
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-040",
+        "venue_name": "Empire Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "empirepokerclub.com",
+        "street": "9296 Westheimer Rd Ste 100",
+        "city": "Houston",
+        "state": "Texas",
+        "zip": "77063",
+        "county": "Harris County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.515664,
+          39.467157
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-042",
+        "venue_name": "Feather Falls Casino",
+        "venue_category": "Casino Hotel",
+        "website": "featherfallscasino.com",
+        "street": "3 Alverda Dr",
+        "city": "Oroville",
+        "state": "California",
+        "zip": "95966.0",
+        "county": "Butte County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "556.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.53689,
+          45.503171
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-043",
+        "venue_name": "Final Table Poker Club",
+        "venue_category": "Casino",
+        "website": "pokerportland.com",
+        "street": "2620 SE 122nd Ave",
+        "city": "Portland",
+        "state": "Oregon",
+        "zip": "97236.0",
+        "county": "Multnomah County",
+        "contact_known": "True",
+        "naics_code": "713120.0",
+        "num_employees": "19.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.215273,
+          47.479552
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-045",
+        "venue_name": "Fortune Poker Room",
+        "venue_category": "Casino",
+        "website": "fortunerenton.com",
+        "street": "111 S 3rd St",
+        "city": "Renton",
+        "state": "Washington",
+        "zip": "98057.0",
+        "county": "King County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "18.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.094459,
+          44.050774
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-046",
+        "venue_name": "Full House Poker",
+        "venue_category": "Casino",
+        "website": "fullhousepoker.org",
+        "street": "808 Olive St",
+        "city": "Eugene",
+        "state": "Oregon",
+        "zip": "97401.0",
+        "county": "Lane County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "9.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.27569,
+          41.139384
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-047",
+        "venue_name": "Garlic City Casino",
+        "venue_category": "Casino",
+        "website": "garliccityclub.com",
+        "street": "2507 Post Rd",
+        "city": "Southport",
+        "state": "Connecticut",
+        "zip": "6890.0",
+        "county": "Greater Bridgeport Planning Region",
+        "contact_known": "True",
+        "naics_code": "561440.0",
+        "num_employees": "22.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.901688,
+          33.578358
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-049",
+        "venue_name": "Gin Mill Card Club",
+        "venue_category": "Poker / Card Club",
+        "website": "ginmillcardclub.com",
+        "street": "4142 19th St",
+        "city": "Lubbock",
+        "state": "Texas",
+        "zip": "79407",
+        "county": "Lubbock County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.914017,
+          35.342747
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-050",
+        "venue_name": "Grand Casino Hotel Resort",
+        "venue_category": "Casino Hotel",
+        "website": "grandresortok.com",
+        "street": "777 Grand Casino Blvd",
+        "city": "Shawnee",
+        "state": "Oklahoma",
+        "zip": "74804.0",
+        "county": "Pottawatomie County",
+        "contact_known": "True",
+        "naics_code": "721110.0",
+        "num_employees": "617.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "0.92",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.722787,
+          38.361086
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-052",
+        "venue_name": "Graton Resort & Casino",
+        "venue_category": "Poker / Card Club",
+        "website": "gratonresortcasino.com",
+        "street": "288 Golf Course Dr",
+        "city": "Rohnert Park",
+        "state": "California",
+        "zip": "94928.0",
+        "county": "Sonoma County",
+        "contact_known": "True",
+        "naics_code": "722513.0",
+        "num_employees": "1646.0",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.126137,
+          44.047136
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-054",
+        "venue_name": "High Mountain Poker",
+        "venue_category": "Poker / Card Club",
+        "website": "highmountainpoker.com",
+        "street": "2160 W 11th Ave Ste D",
+        "city": "Eugene",
+        "state": "Oregon",
+        "zip": "97402.0",
+        "county": "Lane County",
+        "contact_known": "True",
+        "naics_code": "524210.0",
+        "num_employees": "23.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.629189,
+          36.824556
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-055",
+        "venue_name": "Indigo Sky Casino",
+        "venue_category": "Casino Hotel",
+        "website": "indigoskycasino.com",
+        "street": "70220 US-60",
+        "city": "Wyandotte",
+        "state": "Oklahoma",
+        "zip": "74370",
+        "county": "Ottawa County",
+        "contact_known": "True",
+        "naics_code": "721110.0",
+        "num_employees": "16.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "manual",
+        "geocode_accuracy_score": "1",
+        "manual_review": "",
+        "operational_notes": "Street center match on highway - verify coordinates | Street center match on highway - verify coordinates",
+        "data_source": "zoominfo",
+        "full_address": "70220 US-60, Wyandotte, Oklahoma 74370",
+        "geocode_status": "geocoded"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.693233,
+          41.498663
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-056",
+        "venue_name": "JACK Entertainment",
+        "venue_category": "Casino Hotel",
+        "website": "jackentertainment.com",
+        "street": "100 Public Sq Fl 2",
+        "city": "Cleveland",
+        "state": "Ohio",
+        "zip": "44113.0",
+        "county": "Cuyahoga County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "2702.0",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.741724,
+          38.384256
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-057",
+        "venue_name": "Jackson Rancheria Casino Resort",
+        "venue_category": "Casino",
+        "website": "jacksoncasino.com",
+        "street": "12222 New York Ranch Rd",
+        "city": "Jackson",
+        "state": "California",
+        "zip": "95642.0",
+        "county": "Amador County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "275.0",
+        "revenue_range": "$25 mil. - $50 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.869228,
+          32.704438
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-058",
+        "venue_name": "Jamul Casino",
+        "venue_category": "Tribal",
+        "website": "jamulcasinosd.com",
+        "street": "14145 Campo Rd",
+        "city": "Jamul",
+        "state": "California",
+        "zip": "91935.0",
+        "county": "San Diego County",
+        "contact_known": "True",
+        "naics_code": "921150.0",
+        "num_employees": "621.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.44161,
+          28.610789
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-060",
+        "venue_name": "Kickapoo Lucky Eagle",
+        "venue_category": "Casino",
+        "website": "luckyeagletexas.com",
+        "street": "794 Lucky Eagle Dr",
+        "city": "Eagle Pass",
+        "state": "Texas",
+        "zip": "78852.0",
+        "county": "Maverick County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "484.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.116139,
+          31.99901
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-062",
+        "venue_name": "Kojack's Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "kojackspokerclub.com",
+        "street": "3205 W Cuthbert Ave",
+        "city": "Midland",
+        "state": "Texas",
+        "zip": "79701",
+        "county": "Midland County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.416685,
+          42.323964
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-063",
+        "venue_name": "Krazy Kopz Charity Room",
+        "venue_category": "Casino",
+        "website": "krazykopzpoker.com",
+        "street": "38250 Ford Rd",
+        "city": "Westland",
+        "state": "Michigan",
+        "zip": "48185.0",
+        "county": "Wayne County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "2.0",
+        "revenue_range": "Under $500,000",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.671809,
+          45.862593
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-064",
+        "venue_name": "Last Frontier Casino",
+        "venue_category": "Casino",
+        "website": "lastfrontiercasino.com",
+        "street": "105 W 4th St",
+        "city": "La Center",
+        "state": "Washington",
+        "zip": "98629.0",
+        "county": "Clark County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "27.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.757126,
+          37.688111
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-066",
+        "venue_name": "Livermore Casino",
+        "venue_category": "Casino",
+        "website": "livermorecasino.net",
+        "street": "3571 1st St",
+        "city": "Livermore",
+        "state": "California",
+        "zip": "94551.0",
+        "county": "Alameda County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "63.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.815288,
+          30.461764
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-068",
+        "venue_name": "Lucky Card Club Austin",
+        "venue_category": "Poker / Card Club",
+        "website": "luckycardclubaustin.com",
+        "street": "12233 N FM 620",
+        "city": "Austin",
+        "state": "Texas",
+        "zip": "78750",
+        "county": "Williamson County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.45259,
+          37.679903
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-069",
+        "venue_name": "Lucky Chances",
+        "venue_category": "Casino",
+        "website": "luckychances.com",
+        "street": "1700 Hillside Blvd",
+        "city": "Colma",
+        "state": "California",
+        "zip": "94014.0",
+        "county": "San Mateo County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "95.0",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.870763,
+          42.327119
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-071",
+        "venue_name": "Medford Social Club Poker Room",
+        "venue_category": "Poker / Card Club",
+        "website": "medford.poker",
+        "street": "322 E Main St",
+        "city": "Medford",
+        "state": "Oregon",
+        "zip": "97501",
+        "county": "Jackson County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.794191,
+          33.920285
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-072",
+        "venue_name": "Morongo Casino Resort & Spa",
+        "venue_category": "Casino Hotel",
+        "website": "morongocasinoresort.com",
+        "street": "49750 Seminole Dr",
+        "city": "Cabazon",
+        "state": "California",
+        "zip": "92230.0",
+        "county": "Riverside County",
+        "contact_known": "True",
+        "naics_code": "713950.0",
+        "num_employees": "6.0",
+        "revenue_range": "Under $500,000",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.25296,
+          38.170237
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-073",
+        "venue_name": "Napa Valley Casino",
+        "venue_category": "Casino",
+        "website": "napavalleycasino.com",
+        "street": "3466 Broadway St",
+        "city": "American Canyon",
+        "state": "California",
+        "zip": "94503",
+        "county": "Napa County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.896864,
+          42.351752
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-075",
+        "venue_name": "No Look Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "nolookpokerroom.com",
+        "street": "2990 N Pacific Hwy",
+        "city": "Medford",
+        "state": "Oregon",
+        "zip": "97501",
+        "county": "Jackson County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.280494,
+          37.832097
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-076",
+        "venue_name": "Oaks Card Club",
+        "venue_category": "Poker / Card Club",
+        "website": "oakscardclub.com",
+        "street": "4097 San Pablo Ave",
+        "city": "Emeryville",
+        "state": "California",
+        "zip": "94608.0",
+        "county": "Alameda County",
+        "contact_known": "True",
+        "naics_code": "722410.0",
+        "num_employees": "299.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.025046,
+          36.968803
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-077",
+        "venue_name": "Oceanview Casino",
+        "venue_category": "Casino",
+        "website": "oceanviewcasino.com",
+        "street": "709 Pacific Ave",
+        "city": "Santa Cruz",
+        "state": "California",
+        "zip": "95060.0",
+        "county": "Santa Cruz County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "16.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.904602,
+          35.449279
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-078",
+        "venue_name": "Old Cayucos Tavern Card Room",
+        "venue_category": "Poker / Card Club",
+        "website": "oldcayucostavern.com",
+        "street": "130 N Ocean Ave",
+        "city": "Cayucos",
+        "state": "California",
+        "zip": "93430.0",
+        "county": "San Luis Obispo County",
+        "contact_known": "True",
+        "naics_code": "722410.0",
+        "num_employees": "12.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.458322,
+          28.495611
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-080",
+        "venue_name": "One-Eyed Jack's Poker Room",
+        "venue_category": "Poker / Card Club",
+        "website": "oneeyedjacksmarion.com",
+        "street": "4601 S Kirkman Rd",
+        "city": "Orlando",
+        "state": "Florida",
+        "zip": "32811.0",
+        "county": "Orange County",
+        "contact_known": "True",
+        "naics_code": "611110.0",
+        "num_employees": "25.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.426154,
+          37.375492
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-082",
+        "venue_name": "Paiute Palace Casino",
+        "venue_category": "Casino Hotel",
+        "website": "wanaaha.com",
+        "street": "2742 N Sierra Hwy",
+        "city": "Bishop",
+        "state": "California",
+        "zip": "93514.0",
+        "county": "Inyo County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "113.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.081937,
+          37.669552
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-083",
+        "venue_name": "Palace Poker Casino",
+        "venue_category": "Casino",
+        "website": "thepalacepokercasino.com",
+        "street": "22821 Mission Blvd",
+        "city": "Hayward",
+        "state": "California",
+        "zip": "94541.0",
+        "county": "Alameda County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "19.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.218013,
+          37.817064
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-085",
+        "venue_name": "Parkwest Casino Manteca",
+        "venue_category": "Casino",
+        "website": "parkwestcasinomanteca.com",
+        "street": "1355 N Main St",
+        "city": "Manteca",
+        "state": "California",
+        "zip": "95336.0",
+        "county": "San Joaquin County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "26.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.687044,
+          35.644773
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-086",
+        "venue_name": "Paso Robles Casino",
+        "venue_category": "Casino Hotel",
+        "website": "pasoroblescasino.com",
+        "street": "1144 Black Oak Dr",
+        "city": "Paso Robles",
+        "state": "California",
+        "zip": "93446.0",
+        "county": "San Luis Obispo County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "17.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.106702,
+          33.45621
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-087",
+        "venue_name": "Pechanga Resort Casino",
+        "venue_category": "Casino Hotel",
+        "website": "pechanga.com",
+        "street": "45000 Pechanga Pkwy",
+        "city": "Temecula",
+        "state": "California",
+        "zip": "92592.0",
+        "county": "Riverside County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "4700.0",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.87315,
+          32.835971
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-090",
+        "venue_name": "Poker House of Dallas",
+        "venue_category": "Poker / Card Club",
+        "website": "thepokerhouse.com",
+        "street": "1676 Regal Row",
+        "city": "Dallas",
+        "state": "Texas",
+        "zip": "75247",
+        "county": "Dallas County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": "POSSIBLY CLOSED - verify (Yelp shows closed June 2023)",
+        "data_source": "accounts_only"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.579196,
+          45.56235
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-091",
+        "venue_name": "Portland Meadows",
+        "venue_category": "Racetrack",
+        "website": "portlandmeadows.com",
+        "street": "8102 NE Lombard St",
+        "city": "Portland",
+        "state": "Oregon",
+        "zip": "97218.0",
+        "county": "Multnomah County",
+        "contact_known": "True",
+        "naics_code": "711212.0",
+        "num_employees": "18.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.50543,
+          29.737185
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-092",
+        "venue_name": "Prime Social",
+        "venue_category": "Poker / Card Club",
+        "website": "primesocialtx.com",
+        "street": "7801 Westheimer Rd",
+        "city": "Houston",
+        "state": "Texas",
+        "zip": "77063.0",
+        "county": "Harris County",
+        "contact_known": "True",
+        "naics_code": "722410.0",
+        "num_employees": "2.0",
+        "revenue_range": "Under $500,000",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.719945,
+          32.740137
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-093",
+        "venue_name": "Quechan Casino Resort",
+        "venue_category": "Casino Hotel",
+        "website": "playqcr.com",
+        "street": "525 Algodones Rd",
+        "city": "Winterhaven",
+        "state": "California",
+        "zip": "92283.0",
+        "county": "Imperial County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "732.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.963645,
+          36.041591
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-095",
+        "venue_name": "River Spirit Casino",
+        "venue_category": "Casino Hotel",
+        "website": "riverspirittulsa.com",
+        "street": "8330 Riverside Pkwy",
+        "city": "Tulsa",
+        "state": "Oklahoma",
+        "zip": "74137.0",
+        "county": "Tulsa County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "925.0",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.500272,
+          35.181979
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-096",
+        "venue_name": "Riverwind Casino",
+        "venue_category": "Tribal",
+        "website": "riverwind.com",
+        "street": "1544 OK-9",
+        "city": "Norman",
+        "state": "Oklahoma",
+        "zip": "73072",
+        "county": "Pontotoc County",
+        "contact_known": "True",
+        "naics_code": "921150.0",
+        "num_employees": "15000.0",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "geocode_accuracy_type": "manual",
+        "geocode_accuracy_score": "1",
+        "manual_review": "",
+        "operational_notes": "Riverwind Casino should be in Goldsby/Norman OK not Ada - verify | Riverwind Casino should be Goldsby/Norman OK not Ada - verify",
+        "data_source": "zoominfo",
+        "full_address": "1544 OK-9, Norman, Oklahoma 73072",
+        "geocode_status": "geocoded"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.55956,
+          29.532849
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-099",
+        "venue_name": "Rounders Card Club",
+        "venue_category": "Racetrack",
+        "website": "rounderscardclub.com",
+        "street": "3723 Colony Dr Ste 101",
+        "city": "San Antonio",
+        "state": "Texas",
+        "zip": "78230.0",
+        "county": "Bexar County",
+        "contact_known": "True",
+        "naics_code": "711219.0",
+        "num_employees": "7.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.462492,
+          29.62158
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-102",
+        "venue_name": "SA Card House",
+        "venue_category": "Poker / Card Club",
+        "website": "sacardhouse.com",
+        "street": "19314 Us Hwy 281 N Ste 110",
+        "city": "San Antonio",
+        "state": "Texas",
+        "zip": "78258.0",
+        "county": "Bexar County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "48.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.477266,
+          29.577616
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-103",
+        "venue_name": "San Antonio Poker Palace",
+        "venue_category": "Poker / Card Club",
+        "website": "sapokerpalace.com",
+        "street": "15058 San Pedro Ave",
+        "city": "San Antonio",
+        "state": "Texas",
+        "zip": "78232.0",
+        "county": "Bexar County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "11.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.059155,
+          40.065126
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-104",
+        "venue_name": "Shark Tank Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "sharktankpokerclub.com",
+        "street": "1508 Bethel Rd",
+        "city": "Columbus",
+        "state": "Ohio",
+        "zip": "43220.0",
+        "county": "Franklin County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "23.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.681901,
+          32.865564
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-105",
+        "venue_name": "Shuffle 214",
+        "venue_category": "Poker / Card Club",
+        "website": "shuffle214.com",
+        "street": "11411 E Northwest Hwy",
+        "city": "Dallas",
+        "state": "Texas",
+        "zip": "75218",
+        "county": "Dallas County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.777415,
+          30.195247
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-106",
+        "venue_name": "Shuffle 512",
+        "venue_category": "Poker / Card Club",
+        "website": "shuffle512.com",
+        "street": "6501 S Congress Ave Ste 1-104",
+        "city": "Austin",
+        "state": "Texas",
+        "zip": "78745.0",
+        "county": "Travis County",
+        "contact_known": "True",
+        "naics_code": "713990.0",
+        "num_employees": "7.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.128783,
+          29.525305
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-108",
+        "venue_name": "Spades Poker House",
+        "venue_category": "Poker / Card Club",
+        "website": "spadespokerhouse.com",
+        "street": "20798 Gulf Fwy",
+        "city": "Webster",
+        "state": "Texas",
+        "zip": "77598",
+        "county": "Harris County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.312605,
+          38.706258
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-110",
+        "venue_name": "Stones Gambling Hall",
+        "venue_category": "Casino",
+        "website": "stonesgamblinghall.com",
+        "street": "6508 Antelope Rd 6510",
+        "city": "Citrus Heights",
+        "state": "California",
+        "zip": "95621.0",
+        "county": "Sacramento County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "14.0",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.652224,
+          32.607072
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-114",
+        "venue_name": "Sycuan Casino Resort",
+        "venue_category": "Casino Hotel",
+        "website": "sycuan.com",
+        "street": "15318 S Avenue B",
+        "city": "Somerton",
+        "state": "Arizona",
+        "zip": "85350.0",
+        "county": "Yuma County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "188.0",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.637206,
+          36.985377
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-115",
+        "venue_name": "Table Mountain Casino",
+        "venue_category": "Poker / Card Club",
+        "website": "tmcasino.com",
+        "street": "8184 Table Mountain Rd",
+        "city": "Friant",
+        "state": "California",
+        "zip": "93626.0",
+        "county": "Fresno County",
+        "contact_known": "True",
+        "naics_code": "722513.0",
+        "num_employees": "1303.0",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.433526,
+          30.074397
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-116",
+        "venue_name": "Texas Card House",
+        "venue_category": "Casino",
+        "website": "texascardhouse.com",
+        "street": "1411 Spring Cypress Rd",
+        "city": "Spring",
+        "state": "Texas",
+        "zip": "77373.0",
+        "county": "Harris County",
+        "contact_known": "True",
+        "naics_code": "713210.0",
+        "num_employees": "82.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.094869,
+          33.459604
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-117",
+        "venue_name": "Texline Card House Social Club",
+        "venue_category": "Poker / Card Club",
+        "website": "texlinecardhouse.com",
+        "street": "4218 Gibson Lane",
+        "city": "Texarkana",
+        "state": "Texas",
+        "zip": "75503",
+        "county": "Bowie County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.239165,
+          35.744993
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-118",
+        "venue_name": "The Aviator Casino",
+        "venue_category": "Casino Hotel",
+        "website": "theaviatorcasino.com",
+        "street": "1225 Airport Dr",
+        "city": "Delano",
+        "state": "California",
+        "zip": "93215.0",
+        "county": "Kern County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "20.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "range_interpolation",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.267395,
+          30.000129
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-123",
+        "venue_name": "The Hangar Poker House",
+        "venue_category": "Casino",
+        "website": "hangarpokerhouse.com",
+        "street": "212 N Bender Ave 244",
+        "city": "Humble",
+        "state": "Texas",
+        "zip": "77338.0",
+        "county": "Harris County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "6.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "nearest_rooftop_match",
+        "geocode_accuracy_score": "0.87",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.6778,
+          30.496094
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-125",
+        "venue_name": "The Lodge Poker Club",
+        "venue_category": "Poker / Card Club",
+        "website": "thelodgepokerclub.com",
+        "street": "1401 S Interstate 35 Ste 130",
+        "city": "Round Rock",
+        "state": "Texas",
+        "zip": "78664.0",
+        "county": "Williamson County",
+        "contact_known": "True",
+        "naics_code": "722511.0",
+        "num_employees": "13.0",
+        "revenue_range": "$500,000 - $1 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.311788,
+          38.839237
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-129",
+        "venue_name": "Thunder Valley Casino Resort",
+        "venue_category": "Casino Hotel",
+        "website": "thundervalleyresort.com",
+        "street": "1200 Athens Ave",
+        "city": "Lincoln",
+        "state": "California",
+        "zip": "95648.0",
+        "county": "Placer County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "2328.0",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.051589,
+          34.119565
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-130",
+        "venue_name": "Tortoise Rock Casino",
+        "venue_category": "Casino Hotel",
+        "website": "tortoiserockcasino.com",
+        "street": "73829 Baseline Rd",
+        "city": "Twentynine Palms",
+        "state": "California",
+        "zip": "92277.0",
+        "county": "San Bernardino County",
+        "contact_known": "True",
+        "naics_code": "721120.0",
+        "num_employees": "107.0",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.84578,
+          37.494095
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-132",
+        "venue_name": "Turlock Poker Room (copy)",
+        "venue_category": "Poker / Card Club",
+        "website": "turlockpoker.com",
+        "street": "115 S Golden State Blvd",
+        "city": "Turlock",
+        "state": "California",
+        "zip": "95380.0",
+        "county": "Stanislaus County",
+        "contact_known": "True",
+        "naics_code": "813910.0",
+        "num_employees": "30.0",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.382687,
+          40.50729
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-135",
+        "venue_name": "Win-River Resort & Casino",
+        "venue_category": "Casino Hotel",
+        "website": "winrivercasino.com",
+        "street": "2100 Redding Rancheria Rd",
+        "city": "Redding",
+        "state": "California",
+        "zip": "96001",
+        "county": "Shasta County",
+        "contact_known": "False",
+        "naics_code": null,
+        "num_employees": null,
+        "revenue_range": null,
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "accounts_only|research"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.128929,
+          33.760132
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-136",
+        "venue_name": "WinStar World Casino",
+        "venue_category": "Tribal",
+        "website": "winstar.com",
+        "street": "777 Casino Ave",
+        "city": "Thackerville",
+        "state": "Oklahoma",
+        "zip": "73459",
+        "county": "Pontotoc County",
+        "contact_known": "True",
+        "naics_code": "921150.0",
+        "num_employees": "15000.0",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "geocode_accuracy_type": "manual",
+        "geocode_accuracy_score": "1",
+        "manual_review": "",
+        "operational_notes": "WinStar is in Thackerville OK not Ada - wrong geocode, fix manually | WinStar is in Thackerville OK not Ada - wrong geocode, fix manually",
+        "data_source": "zoominfo",
+        "full_address": "777 Casino Ave, Thackerville, Oklahoma 73459",
+        "geocode_status": "geocoded"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.64596,
+          41.548691
+        ]
+      },
+      "properties": {
+        "venue_id": "VEN-137",
+        "venue_name": "Windy City Poker Championship",
+        "venue_category": "Casino",
+        "website": "windycitypokerchampionship.com",
+        "street": "18728 Center Ave",
+        "city": "Homewood",
+        "state": "Illinois",
+        "zip": "60430.0",
+        "county": "Cook County",
+        "contact_known": "True",
+        "naics_code": "713290.0",
+        "num_employees": "6.0",
+        "revenue_range": "Under $500,000",
+        "geocode_accuracy_type": "rooftop",
+        "geocode_accuracy_score": "1",
+        "manual_review": null,
+        "operational_notes": null,
+        "data_source": "zoominfo"
+      }
+    }
+  ],
+  "_meta": {
+    "description": "US casinos, card clubs, tribal gaming, and racetracks",
+    "dataset_version": 1,
+    "schema_version": 1,
+    "last_updated": "2026-04-14",
+    "record_count": 90,
+    "categories": [
+      "Casino",
+      "Casino Hotel",
+      "Tribal",
+      "Racetrack",
+      "Poker / Card Club"
+    ],
+    "field_sources": {
+      "venue_id": {
+        "source": "internal",
+        "description": "Stable internal identifier",
+        "last_updated": "2026-04-14"
+      },
+      "venue_name": {
+        "source": "zoominfo + research",
+        "description": "Venue legal or trade name",
+        "last_updated": "2026-04-14"
+      },
+      "venue_category": {
+        "source": "internal research",
+        "description": "Categorical classification (5 values)",
+        "last_updated": "2026-04-14"
+      },
+      "website": {
+        "source": "zoominfo + research",
+        "description": "Venue primary website (no protocol)",
+        "last_updated": "2026-04-14"
+      },
+      "street": {
+        "source": "zoominfo",
+        "description": "Street address",
+        "last_updated": "2026-04-14"
+      },
+      "city": {
+        "source": "zoominfo",
+        "description": "City name",
+        "last_updated": "2026-04-14"
+      },
+      "state": {
+        "source": "zoominfo",
+        "description": "US state name (full, not abbreviation)",
+        "last_updated": "2026-04-14"
+      },
+      "zip": {
+        "source": "zoominfo",
+        "description": "ZIP code",
+        "last_updated": "2026-04-14"
+      },
+      "county": {
+        "source": "zoominfo",
+        "description": "County name",
+        "last_updated": "2026-04-14"
+      },
+      "contact_known": {
+        "source": "internal research",
+        "description": "Boolean-ish string: do we have contact",
+        "last_updated": "2026-04-14"
+      },
+      "naics_code": {
+        "source": "zoominfo",
+        "description": "NAICS industry classification code",
+        "last_updated": "2026-04-14"
+      },
+      "num_employees": {
+        "source": "zoominfo",
+        "description": "Approximate employee count",
+        "last_updated": "2026-04-14"
+      },
+      "revenue_range": {
+        "source": "zoominfo",
+        "description": "Approximate annual revenue bucket",
+        "last_updated": "2026-04-14"
+      },
+      "geocode_accuracy_type": {
+        "source": "geocodio",
+        "description": "Geocoder match quality descriptor",
+        "last_updated": "2026-04-14"
+      },
+      "geocode_accuracy_score": {
+        "source": "geocodio",
+        "description": "Geocoder confidence score 0-1",
+        "last_updated": "2026-04-14"
+      },
+      "manual_review": {
+        "source": "internal",
+        "description": "Whether this record was hand-verified",
+        "last_updated": "2026-04-14"
+      },
+      "operational_notes": {
+        "source": "internal research",
+        "description": "Freeform notes from analysts",
+        "last_updated": "2026-04-14"
+      },
+      "data_source": {
+        "source": "internal",
+        "description": "Origin vendor tag for the full record",
+        "last_updated": "2026-04-14"
+      },
+      "operational_status": {
+        "source": "not yet populated",
+        "description": "active | closed | unknown (future)",
+        "last_updated": null
+      }
+    }
+  }
+}
