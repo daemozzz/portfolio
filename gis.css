@@ -56,17 +56,17 @@ body {
   padding: 0 12px;
   background: #050510;
   border-bottom: 1px solid rgba(0, 245, 212, 0.25);
-  font-family: 'Press Start 2P', 'Share Tech Mono', monospace;
+  font-family: 'Share Tech Mono', monospace;
   z-index: 30;
 }
 .portfolio-bar .pb-home {
-  font-size: 8px;
+  font-size: 13px;
   line-height: 1;
   color: #00f5d4;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 4px 8px;
+  letter-spacing: 0.12em;
+  padding: 3px 9px;
   border: 1px solid #00b89c;
   background: rgba(0, 245, 212, 0.05);
   transition: all 0.15s;
@@ -79,10 +79,10 @@ body {
   box-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
 }
 .portfolio-bar .pb-here {
-  font-size: 7px;
+  font-size: 11px;
   line-height: 1;
   color: #6a9e97;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
   overflow: hidden;
