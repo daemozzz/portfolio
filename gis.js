@@ -37,10 +37,10 @@
 
   var CAT_COLOR = {
     "Casino Hotel":      "#f59e0b",
-    "Casino":            "#ef4444",
-    "Poker / Card Club": "#3b82f6",
+    "Casino":            "#3b82f6",
+    "Poker / Card Club": "#ef4444",
     "Tribal":            "#8b5cf6",
-    "Racetrack":         "#10b981"
+    "Racetrack":         "#ec4899"
   };
 
   // ---- Filter state (category panel + master filter bar) ----
@@ -50,8 +50,18 @@
     states:      new Set(),     // empty = all
     hideClosed:  false,
     hasWebsite:  false,
+    hasPoker:    false,     // require has_poker === "True"
+    hasTables:   false,     // require has_table_games === "True"
+    hideUnknown: false,     // require both flags be "True" or "False" (not "")
+    onlyVerified: true,     // show only rows where manual_review !== "True" — default ON for clean initial map
     minTables:   0,
-    minGeoScore: 0
+    minGeoScore: 0,
+
+    // Spatial selection state
+    selectMode:   false,        // true while user is drawing the bbox
+    selectedIds:  new Set(),    // venue_ids in current selection (post-bbox)
+    onlySelected: false,        // when true, map hides everything outside selectedIds
+    attrNameFilter: ""          // substring filter applied inside the attr table
   };
 
   // The original unfiltered geojson lives here so every filter change
@@ -115,6 +125,13 @@
     "#64748b"
   ];
 
+  // Helper: both flags are explicitly confirmed False
+  var bothFalseExpr = [
+    "all",
+    ["==", ["get", "has_poker"], "False"],
+    ["==", ["get", "has_table_games"], "False"]
+  ];
+
   var baseRadiusExpr = [
     "match",
     ["get", "venue_category"],
@@ -132,11 +149,48 @@
     10, ["+", baseRadiusExpr, 4]
   ];
 
-  // Opacity hook — dims closed venues when operational_status field is populated.
+  // Opacity encodes both operational status and geocode confidence so the
+  // map honestly conveys data trust. Closed → strongly dimmed. Active →
+  // tiered by accuracy_type so a city-centroid pin doesn't pretend to
+  // have the same authority as a rooftop one.
   var opacityExpr = [
     "case",
     ["==", ["get", "operational_status"], "closed"], 0.25,
-    0.85
+    ["match", ["get", "geocode_accuracy_type"],
+      ["place", "state"], 0.45,
+      ["street_center"], 0.65,
+      ["wikidata", "nearest_rooftop_match"], 0.85,
+      0.95
+    ]
+  ];
+
+  // Halo encodes the offering signal (independent of venue_category fill color):
+  //   Poker=True          → thick GREEN halo (priority)
+  //   Tables=True (no pkr)→ pure white halo
+  //   Both confirmed False→ BLACK halo (strong "no" signal)
+  //   Unknown             → no halo (width 0)
+  var strokeWidthExpr = [
+    "case",
+    ["==", ["get", "has_poker"], "True"],       2.5,
+    ["==", ["get", "has_table_games"], "True"], 1.8,
+    bothFalseExpr,                              1.8,
+    0
+  ];
+
+  var strokeColorExpr = [
+    "case",
+    ["==", ["get", "has_poker"], "True"],       "#22c55e",
+    ["==", ["get", "has_table_games"], "True"], "#ffffff",
+    bothFalseExpr,                              "#000000",
+    "#000000"
+  ];
+
+  var strokeOpacityExpr = [
+    "case",
+    ["==", ["get", "has_poker"], "True"],       1.0,
+    ["==", ["get", "has_table_games"], "True"], 0.95,
+    bothFalseExpr,                              1.0,
+    0
   ];
 
   // ---- Load data (once) ----
@@ -407,7 +461,7 @@
       type: "geojson",
       data: geojson,
       cluster: true,
-      clusterMaxZoom: 7,
+      clusterMaxZoom: 5,   // unclustered from zoom 6 up (≈ 100 mi scale in CONUS)
       clusterRadius: 50
     });
 
@@ -446,10 +500,37 @@
       paint: {
         "circle-color": colorExpr,
         "circle-radius": radiusExpr,
-        "circle-stroke-width": 1,
-        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": strokeWidthExpr,
+        "circle-stroke-color": strokeColorExpr,
         "circle-opacity": opacityExpr,
-        "circle-stroke-opacity": opacityExpr
+        "circle-stroke-opacity": strokeOpacityExpr
+      }
+    });
+
+    // Venue name labels — only at tight zoom (>=12) where overlap is rare.
+    // text-allow-overlap=false lets MapLibre auto-hide labels that would
+    // collide, keeping dense areas readable instead of a wall of text.
+    map.addLayer({
+      id: "venues-labels",
+      type: "symbol",
+      source: "venues",
+      filter: ["!", ["has", "point_count"]],
+      minzoom: 12,
+      layout: {
+        "text-field": ["get", "venue_name"],
+        "text-font": ["Noto Sans Regular"],
+        "text-size": 12,
+        "text-offset": [0, 1.1],
+        "text-anchor": "top",
+        "text-allow-overlap": false,
+        "text-optional": true,
+        "text-padding": 4
+      },
+      paint: {
+        "text-color": "#000000",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.4,
+        "text-halo-blur": 0.4
       }
     });
 
@@ -505,6 +586,14 @@
       // Website presence
       if (state.hasWebsite && !p.website) return false;
 
+      // Poker / table-game feature flags (three-valued: "True" | "False" | "")
+      if (state.hasPoker && p.has_poker !== "True") return false;
+      if (state.hasTables && p.has_table_games !== "True") return false;
+      if (state.hideUnknown && (!p.has_poker || !p.has_table_games)) return false;
+
+      // Manual review filter
+      if (state.onlyVerified && p.manual_review === "True") return false;
+
       // Min tables (field not yet in dataset — passes everything when missing)
       if (state.minTables > 0) {
         var tables = parseInt(p.num_tables, 10);
@@ -515,6 +604,11 @@
       if (state.minGeoScore > 0) {
         var score = parseFloat(p.geocode_accuracy_score);
         if (isNaN(score) || score < state.minGeoScore) return false;
+      }
+
+      // Spatial-selection drill-in: hide anything not in the current selection
+      if (state.onlySelected && state.selectedIds.size > 0) {
+        if (!state.selectedIds.has(p.venue_id)) return false;
       }
 
       return true;
@@ -569,12 +663,44 @@
       );
     }
 
+    // Feature flag summary (three-valued)
+    var flagRow = function (label, val) {
+      var icon, color;
+      if (val === "True")       { icon = "✓"; color = "#22c55e"; }
+      else if (val === "False") { icon = "✗"; color = "#94a3b8"; }
+      else                      { icon = "?"; color = "#eab308"; }
+      var text = val === "True" ? "Yes" : val === "False" ? "No" : "Unknown";
+      return '<span style="color:' + color + ';font-weight:600;">' + icon + "</span> " +
+             '<span style="color:var(--text-mute);">' + label + ":</span> " +
+             '<span style="color:' + color + ';">' + text + "</span>";
+    };
+    var flagParts = [flagRow("Poker", p.has_poker), flagRow("Table games", p.has_table_games)];
+    parts.push('<div class="venue-row" style="font-size:12px;">' + flagParts.join(" · ") + "</div>");
+
     var meta = [];
     if (p.num_employees) meta.push("Employees: " + p.num_employees);
     if (p.revenue_range) meta.push("Revenue: " + p.revenue_range);
     if (p.num_tables)    meta.push("Tables: " + p.num_tables);
     if (meta.length) {
       parts.push('<div class="venue-row" style="color:var(--accent-2);">' + esc(meta.join(" · ")) + "</div>");
+    }
+
+    // Prior name (from merge history) — surfaced if present in operational_notes
+    var priorMatch = /prior_name:([^|]+)/.exec(p.operational_notes || "");
+    if (priorMatch) {
+      parts.push('<div class="venue-row" style="font-size:11px;color:var(--text-mute);font-style:italic;">formerly: ' + esc(priorMatch[1].trim()) + "</div>");
+    }
+
+    // Data sources
+    if (p.data_source) {
+      var srcs = p.data_source.split("|").map(function (s) { return s.trim(); }).filter(Boolean);
+      if (srcs.length) {
+        parts.push('<div class="venue-row" style="font-size:11px;color:var(--text-mute);">sources: ' + esc(srcs.join(", ")) + "</div>");
+      }
+    }
+
+    if (p.manual_review === "True") {
+      parts.push('<div class="venue-row" style="font-size:11px;color:#eab308;font-weight:600;">⚠ Flagged for review</div>');
     }
 
     if (p.operational_notes) {
@@ -584,7 +710,8 @@
     // Full attribute dump
     var hiddenKeys = {
       venue_name: 1, venue_category: 1, city: 1, state: 1, street: 1,
-      website: 1, num_employees: 1, revenue_range: 1, num_tables: 1, operational_notes: 1
+      website: 1, num_employees: 1, revenue_range: 1, num_tables: 1, operational_notes: 1,
+      has_poker: 1, has_table_games: 1, data_source: 1, manual_review: 1
     };
     var extraRows = [];
     Object.keys(p).forEach(function (k) {
@@ -758,6 +885,442 @@
     msDrag.addEventListener("pointercancel", endDrag);
   })();
 
+  // ---- Halo legend: collapse toggle + drag (mirrors state-panel pattern)
+  (function setupHaloLegend() {
+    var panel = document.getElementById("halo-legend");
+    var dragHandle = document.getElementById("halo-legend-drag");
+    var collapseBtn = document.getElementById("halo-legend-collapse");
+    var shell = document.getElementById("map-shell");
+    if (!panel || !dragHandle || !collapseBtn || !shell) return;
+
+    collapseBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var collapsed = panel.classList.toggle("is-collapsed");
+      collapseBtn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
+
+    var dragging = false;
+    var startX = 0, startY = 0;
+    var origLeft = 0, origTop = 0;
+
+    dragHandle.addEventListener("pointerdown", function (e) {
+      if (e.target.closest(".float-panel-collapse")) return;
+      dragging = true;
+      panel.classList.add("is-dragging");
+      var rect = panel.getBoundingClientRect();
+      var shellRect = shell.getBoundingClientRect();
+      origLeft = rect.left - shellRect.left;
+      origTop  = rect.top  - shellRect.top;
+      startX = e.clientX;
+      startY = e.clientY;
+      dragHandle.setPointerCapture(e.pointerId);
+      panel.style.left = origLeft + "px";
+      panel.style.top  = origTop  + "px";
+      panel.style.right = "auto";
+      panel.style.bottom = "auto";
+    });
+
+    dragHandle.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      var dy = e.clientY - startY;
+      var shellRect = shell.getBoundingClientRect();
+      var newLeft = Math.max(0, Math.min(shellRect.width  - panel.offsetWidth,  origLeft + dx));
+      var newTop  = Math.max(0, Math.min(shellRect.height - panel.offsetHeight, origTop  + dy));
+      panel.style.left = newLeft + "px";
+      panel.style.top  = newTop  + "px";
+    });
+
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      panel.classList.remove("is-dragging");
+      try { dragHandle.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    dragHandle.addEventListener("pointerup", endDrag);
+    dragHandle.addEventListener("pointercancel", endDrag);
+  })();
+
+  // ---- Spatial select tool + attribute table panel
+  // Self-contained module: drag-box selection on the map → fuzzy-filterable
+  // attribute table → CSV export → optional drill-into-this-set.
+  // Selection respects all current filters (category/state/etc).
+  (function setupAttributeTable() {
+    var mapShell      = document.getElementById("map-shell");
+    var selectBtn     = document.getElementById("f-select-area");
+    var openTableBtn  = document.getElementById("f-open-table");
+    var selectBox     = document.getElementById("select-box");
+    var selectBanner  = document.getElementById("select-mode-banner");
+    var attrPanel     = document.getElementById("attr-panel");
+    var attrDrag      = document.getElementById("attr-panel-drag");
+    var attrCollapse  = document.getElementById("attr-panel-collapse");
+    var attrClose     = document.getElementById("attr-panel-close");
+    var attrThead     = document.getElementById("attr-thead");
+    var attrTbody     = document.getElementById("attr-tbody");
+    var attrCount     = document.getElementById("attr-count");
+    var attrShown     = document.getElementById("attr-shown");
+    var attrCapBanner = document.getElementById("attr-cap-banner");
+    var nameFilterEl  = document.getElementById("attr-name-filter");
+    var onlySelectedCb= document.getElementById("attr-only-selected");
+    var exportBtn     = document.getElementById("attr-export");
+    var clearBtn      = document.getElementById("attr-clear");
+
+    if (!mapShell || !selectBtn || !attrPanel) return;
+
+    // DOM render cap — rendering >ROW_CAP rows in one append starts feeling
+    // sluggish on slower laptops. When the visible set exceeds this we
+    // render the first N and show a banner prompting the user to narrow.
+    var ROW_CAP = 500;
+
+    // Column definitions — order matches master CSV. Each entry is
+    // [property-key, header-label, optional-class].
+    // venue_id is column 0 (sticky); lat/lng synthesized from geometry.
+    var COLS = [
+      ["venue_id",                "Venue ID"],
+      ["venue_name",              "Venue Name"],
+      ["website",                 "Website"],
+      ["street",                  "Street"],
+      ["city",                    "City"],
+      ["state",                   "State"],
+      ["zip",                     "ZIP"],
+      ["full_address",            "Full Address"],
+      ["venue_category",          "Category"],
+      ["has_poker",               "Poker", "col-bool"],
+      ["has_table_games",         "Tables", "col-bool"],
+      ["naics_code",              "NAICS"],
+      ["contact_known",           "Contact?", "col-bool"],
+      ["num_employees",           "Employees"],
+      ["revenue_range",           "Revenue"],
+      ["data_source",             "Sources"],
+      ["geocode_status",          "Geocode Status"],
+      ["operational_status",      "Operational"],
+      ["operational_notes",       "Notes"],
+      ["geocodio_ready",          "Geo Ready", "col-bool"],
+      ["geocode_accuracy_type",   "Accuracy Type"],
+      ["geocode_accuracy_score",  "Accuracy Score"],
+      ["county",                  "County"],
+      ["manual_review",           "Manual Review", "col-bool"],
+      ["__lat",                   "Latitude"],
+      ["__lng",                   "Longitude"]
+    ];
+
+    // ---- select-mode toggle ----
+    function setSelectMode(on) {
+      state.selectMode = on;
+      if (on) {
+        mapShell.classList.add("is-selecting");
+        selectBanner.hidden = false;
+        selectBtn.classList.add("is-active");
+        // Disable map interactions that would conflict with our box drag
+        map.dragPan.disable();
+        if (map.boxZoom)        map.boxZoom.disable();
+        if (map.doubleClickZoom) map.doubleClickZoom.disable();
+      } else {
+        mapShell.classList.remove("is-selecting");
+        selectBanner.hidden = true;
+        selectBtn.classList.remove("is-active");
+        selectBox.hidden = true;
+        map.dragPan.enable();
+        if (map.boxZoom)         map.boxZoom.enable();
+        if (map.doubleClickZoom) map.doubleClickZoom.enable();
+      }
+    }
+
+    selectBtn.addEventListener("click", function () {
+      setSelectMode(!state.selectMode);
+    });
+
+    // ESC cancels select mode
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && state.selectMode) setSelectMode(false);
+    });
+
+    // ---- drag-box machinery ----
+    var dragging = false;
+    var startPt = null;
+
+    map.on("mousedown", function (e) {
+      if (!state.selectMode) return;
+      e.preventDefault();
+      dragging = true;
+      startPt = e.point;
+      selectBox.style.left   = startPt.x + "px";
+      selectBox.style.top    = startPt.y + "px";
+      selectBox.style.width  = "0px";
+      selectBox.style.height = "0px";
+      selectBox.hidden = false;
+    });
+
+    map.on("mousemove", function (e) {
+      if (!dragging) return;
+      var x = e.point.x, y = e.point.y;
+      var minX = Math.min(startPt.x, x);
+      var minY = Math.min(startPt.y, y);
+      selectBox.style.left   = minX + "px";
+      selectBox.style.top    = minY + "px";
+      selectBox.style.width  = Math.abs(x - startPt.x) + "px";
+      selectBox.style.height = Math.abs(y - startPt.y) + "px";
+    });
+
+    map.on("mouseup", function (e) {
+      if (!dragging) return;
+      dragging = false;
+      var endPt = e.point;
+      // Treat very small box as misclick — exit select mode without committing
+      if (Math.abs(endPt.x - startPt.x) < 5 || Math.abs(endPt.y - startPt.y) < 5) {
+        selectBox.hidden = true;
+        setSelectMode(false);
+        return;
+      }
+      // Pixel bbox → lng/lat bbox via map.unproject
+      var sw = map.unproject([Math.min(startPt.x, endPt.x), Math.max(startPt.y, endPt.y)]);
+      var ne = map.unproject([Math.max(startPt.x, endPt.x), Math.min(startPt.y, endPt.y)]);
+      setSelectMode(false);
+      commitSelection({ west: sw.lng, south: sw.lat, east: ne.lng, north: ne.lat });
+    });
+
+    // ---- selection commit (from spatial bbox) ----
+    function commitSelection(bbox) {
+      if (!rawGeojson) return;
+      // Apply existing filters first so spatial intersects respect category/state/etc.
+      var current = filterGeojson(rawGeojson);
+      var hits = current.features.filter(function (f) {
+        var c = f.geometry && f.geometry.coordinates;
+        if (!c) return false;
+        return c[0] >= bbox.west && c[0] <= bbox.east
+            && c[1] >= bbox.south && c[1] <= bbox.north;
+      });
+      openWithHits(hits);
+    }
+
+    // ---- launch attribute table without spatial selection ----
+    // Populates the table from the current filter set so a marketer can
+    // search "MGM" across the entire dataset without box-selecting first.
+    function launchOpenTable() {
+      if (!rawGeojson) return;
+      var hits = filterGeojson(rawGeojson).features;
+      openWithHits(hits);
+    }
+
+    function openWithHits(hits) {
+      attrCount.textContent = hits.length;
+      renderTable(hits);
+      attrPanel.hidden = false;
+      attrPanel.classList.remove("is-collapsed");
+      attrCollapse.setAttribute("aria-expanded", "true");
+    }
+
+    openTableBtn.addEventListener("click", launchOpenTable);
+
+    // ---- table render ----
+    var lastHits = [];
+
+    function flatRow(f) {
+      var p = f.properties || {};
+      var c = f.geometry && f.geometry.coordinates;
+      var out = {};
+      Object.keys(p).forEach(function (k) { out[k] = p[k]; });
+      if (c) {
+        out.__lng = c[0];
+        out.__lat = c[1];
+      }
+      return out;
+    }
+
+    function renderTable(hits) {
+      lastHits = hits.slice();
+      // Header row (only build once per panel-open)
+      if (!attrThead.hasChildNodes()) {
+        var trh = document.createElement("tr");
+        COLS.forEach(function (col) {
+          var th = document.createElement("th");
+          th.textContent = col[1];
+          if (col[2]) th.className = col[2];
+          trh.appendChild(th);
+        });
+        attrThead.appendChild(trh);
+      }
+      applyNameFilter();
+    }
+
+    function applyNameFilter() {
+      var q = (state.attrNameFilter || "").trim().toLowerCase();
+      var rows = lastHits.filter(function (f) {
+        if (!q) return true;
+        var n = (f.properties && f.properties.venue_name || "").toLowerCase();
+        return n.indexOf(q) !== -1;
+      });
+
+      // Update selectedIds to match the visible table contents. This is
+      // what makes "show only selected on map" work whether the table came
+      // from a bbox, a name filter, or the global Open-table launch.
+      state.selectedIds = new Set(rows.map(function (f) {
+        return f.properties && f.properties.venue_id;
+      }));
+
+      attrShown.textContent = rows.length + " row" + (rows.length === 1 ? "" : "s") + " shown";
+
+      // Cap render at ROW_CAP — surface a banner so the user knows to narrow.
+      var capped = rows.length > ROW_CAP;
+      var renderRows = capped ? rows.slice(0, ROW_CAP) : rows;
+      if (capped) {
+        attrCapBanner.textContent = "Showing first " + ROW_CAP + " of " + rows.length +
+                                    " — refine filters or search by name to see more";
+        attrCapBanner.hidden = false;
+      } else {
+        attrCapBanner.hidden = true;
+      }
+
+      attrTbody.innerHTML = "";
+      var frag = document.createDocumentFragment();
+      renderRows.forEach(function (f) {
+        var r = flatRow(f);
+        var tr = document.createElement("tr");
+        tr.setAttribute("data-vid", r.venue_id || "");
+        COLS.forEach(function (col) {
+          var td = document.createElement("td");
+          var v = r[col[0]];
+          td.textContent = (v === undefined || v === null || v === "") ? "" : String(v);
+          if (col[2]) td.className = col[2];
+          if (typeof v === "string" && v.length > 60) td.title = v;
+          tr.appendChild(td);
+        });
+        tr.addEventListener("click", function () {
+          var coords = f.geometry && f.geometry.coordinates;
+          if (!coords) return;
+          map.easeTo({ center: coords, zoom: Math.max(map.getZoom(), 13) });
+          new maplibregl.Popup({ closeButton: true, maxWidth: "320px" })
+            .setLngLat(coords)
+            .setHTML(renderPopup(f.properties || {}))
+            .addTo(map);
+        });
+        frag.appendChild(tr);
+      });
+      attrTbody.appendChild(frag);
+
+      // If user is showing only selected on map, re-apply the map filter
+      // since the selection set just changed.
+      if (state.onlySelected) applyAllFilters();
+    }
+
+    nameFilterEl.addEventListener("input", function () {
+      state.attrNameFilter = nameFilterEl.value;
+      applyNameFilter();
+    });
+
+    onlySelectedCb.addEventListener("change", function () {
+      state.onlySelected = onlySelectedCb.checked;
+      applyAllFilters();
+    });
+
+    // ---- CSV export ----
+    function csvEscape(v) {
+      if (v === undefined || v === null) return "";
+      var s = String(v);
+      if (/[",\n\r]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+      return s;
+    }
+
+    exportBtn.addEventListener("click", function () {
+      // Export the CURRENTLY VISIBLE rows (post-name-filter), all columns
+      var q = (state.attrNameFilter || "").trim().toLowerCase();
+      var rows = lastHits.filter(function (f) {
+        if (!q) return true;
+        var n = (f.properties && f.properties.venue_name || "").toLowerCase();
+        return n.indexOf(q) !== -1;
+      });
+      var header = COLS.map(function (c) { return csvEscape(c[1]); }).join(",");
+      var body = rows.map(function (f) {
+        var r = flatRow(f);
+        return COLS.map(function (c) { return csvEscape(r[c[0]]); }).join(",");
+      }).join("\n");
+      var csv = header + "\n" + body + "\n";
+      var blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      var d = new Date();
+      var stamp = d.getFullYear() + "-" +
+                  String(d.getMonth() + 1).padStart(2, "0") + "-" +
+                  String(d.getDate()).padStart(2, "0");
+      a.href = url;
+      a.download = "casino-selection-" + stamp + ".csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // ---- panel close / clear / collapse ----
+    function clearSelection() {
+      state.selectedIds = new Set();
+      state.onlySelected = false;
+      onlySelectedCb.checked = false;
+      lastHits = [];
+      attrTbody.innerHTML = "";
+      attrCount.textContent = "0";
+      attrShown.textContent = "— rows shown";
+      attrCapBanner.hidden = true;
+      nameFilterEl.value = "";
+      state.attrNameFilter = "";
+      applyAllFilters();
+    }
+
+    clearBtn.addEventListener("click", clearSelection);
+    attrClose.addEventListener("click", function () {
+      clearSelection();
+      attrPanel.hidden = true;
+    });
+
+    attrCollapse.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var collapsed = attrPanel.classList.toggle("is-collapsed");
+      attrCollapse.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
+
+    // ---- panel drag (mirrors state-panel/legend pattern) ----
+    (function makeAttrPanelDraggable() {
+      var dragging2 = false;
+      var sX = 0, sY = 0, oL = 0, oT = 0;
+      attrDrag.addEventListener("pointerdown", function (e) {
+        if (e.target.closest(".float-panel-collapse") ||
+            e.target.closest(".float-panel-close")) return;
+        dragging2 = true;
+        attrPanel.classList.add("is-dragging");
+        var rect = attrPanel.getBoundingClientRect();
+        var shellRect = mapShell.getBoundingClientRect();
+        oL = rect.left - shellRect.left;
+        oT = rect.top  - shellRect.top;
+        sX = e.clientX;
+        sY = e.clientY;
+        attrDrag.setPointerCapture(e.pointerId);
+        // Lock to absolute pixel positioning (centered transform breaks otherwise)
+        attrPanel.style.left = oL + "px";
+        attrPanel.style.top  = oT + "px";
+        attrPanel.style.right = "auto";
+        attrPanel.style.bottom = "auto";
+        attrPanel.style.transform = "none";
+      });
+      attrDrag.addEventListener("pointermove", function (e) {
+        if (!dragging2) return;
+        var dx = e.clientX - sX;
+        var dy = e.clientY - sY;
+        var shellRect = mapShell.getBoundingClientRect();
+        var newL = Math.max(0, Math.min(shellRect.width  - attrPanel.offsetWidth,  oL + dx));
+        var newT = Math.max(0, Math.min(shellRect.height - attrPanel.offsetHeight, oT + dy));
+        attrPanel.style.left = newL + "px";
+        attrPanel.style.top  = newT + "px";
+      });
+      function endDrag2(e) {
+        if (!dragging2) return;
+        dragging2 = false;
+        attrPanel.classList.remove("is-dragging");
+        try { attrDrag.releasePointerCapture(e.pointerId); } catch (_) {}
+      }
+      attrDrag.addEventListener("pointerup", endDrag2);
+      attrDrag.addEventListener("pointercancel", endDrag2);
+    })();
+  })();
+
   // Search within the list
   msSearch.addEventListener("input", function () {
     filterMsList(msSearch.value.trim().toLowerCase());
@@ -823,6 +1386,30 @@
     applyAllFilters();
   });
 
+  var hasPokerCb = document.getElementById("f-has-poker");
+  if (hasPokerCb) hasPokerCb.addEventListener("change", function () {
+    state.hasPoker = hasPokerCb.checked;
+    applyAllFilters();
+  });
+
+  var hasTablesCb = document.getElementById("f-has-tables");
+  if (hasTablesCb) hasTablesCb.addEventListener("change", function () {
+    state.hasTables = hasTablesCb.checked;
+    applyAllFilters();
+  });
+
+  var hideUnknownCb = document.getElementById("f-hide-unknown");
+  if (hideUnknownCb) hideUnknownCb.addEventListener("change", function () {
+    state.hideUnknown = hideUnknownCb.checked;
+    applyAllFilters();
+  });
+
+  var onlyVerifiedCb = document.getElementById("f-only-verified");
+  if (onlyVerifiedCb) onlyVerifiedCb.addEventListener("change", function () {
+    state.onlyVerified = onlyVerifiedCb.checked;
+    applyAllFilters();
+  });
+
   var tablesRange = document.getElementById("f-tables");
   var tablesVal = document.getElementById("f-tables-val");
   tablesRange.addEventListener("input", function () {
@@ -846,6 +1433,10 @@
     msLabel.classList.add("is-placeholder");
     hideClosedCb.checked = false;
     hasWebCb.checked = false;
+    if (hasPokerCb)    hasPokerCb.checked = false;
+    if (hasTablesCb)   hasTablesCb.checked = false;
+    if (hideUnknownCb) hideUnknownCb.checked = false;
+    if (onlyVerifiedCb) onlyVerifiedCb.checked = true;
     tablesRange.value = 0;  tablesVal.textContent = "any";
     geoRange.value    = 0;  geoVal.textContent    = "0.00";
 
@@ -853,8 +1444,19 @@
     state.states = new Set();
     state.hideClosed = false;
     state.hasWebsite = false;
+    state.hasPoker = false;
+    state.hasTables = false;
+    state.hideUnknown = false;
+    state.onlyVerified = true;     // Reset re-applies default-ON
     state.minTables = 0;
     state.minGeoScore = 0;
+    // Clear any active spatial selection
+    state.selectedIds = new Set();
+    state.onlySelected = false;
+    var attrPanelEl = document.getElementById("attr-panel");
+    if (attrPanelEl) attrPanelEl.hidden = true;
+    var onlySelCb = document.getElementById("attr-only-selected");
+    if (onlySelCb) onlySelCb.checked = false;
 
     // Re-enable all category checkboxes
     document.querySelectorAll('#layer-panel input[data-cat]').forEach(function (cb) {

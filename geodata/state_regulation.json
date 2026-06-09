@@ -1,224 +1,74 @@
 {
   "_meta": {
-    "description": "Gambling regulation classification per US state. STUB DATA — validate before production.",
-    "schema_version": 1,
+    "description": "Brick-and-mortar gambling regulation classification per US state. Operational-reality lens: states with operating gray-market poker rooms classified as 'limited' even where strict legality is questionable.",
+    "schema_version": 2,
     "categories": {
-      "commercial": "Commercial casinos legal",
-      "tribal": "Tribal gaming only",
-      "limited": "Limited gaming (racinos, cardrooms, etc.)",
-      "prohibited": "No casino gaming",
-      "unknown": "Unclassified — needs research"
+      "commercial":  "Commercial casinos legal and operating",
+      "tribal":      "Tribal-only gaming (no commercial casinos)",
+      "limited":     "Cardrooms / racinos / restricted gaming / gray-market venues operating",
+      "prohibited":  "No operating casino or poker venues",
+      "unknown":     "Unclassified — needs research"
     },
-    "last_reviewed": null
+    "last_reviewed": "2026-04-29",
+    "sources": [
+      "poker.org/poker-legalization (live-poker signal as tiebreaker)",
+      "claude-training-data-2026 (state-by-state casino regulatory knowledge)",
+      "master_venues.csv (operating-venue counts cross-reference)"
+    ],
+    "notes": "Online poker / online gambling explicitly OUT OF SCOPE — this layer reflects brick-and-mortar facility regulation only. Day-cruise / offshore gambling boats not represented (no land-based legal status)."
   },
   "states": {
-    "Alabama": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Alaska": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Arizona": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Arkansas": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "California": {
-      "regulation_type": "limited",
-      "notes": ""
-    },
-    "Colorado": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Connecticut": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Delaware": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "District of Columbia": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Florida": {
-      "regulation_type": "limited",
-      "notes": ""
-    },
-    "Georgia": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Hawaii": {
-      "regulation_type": "prohibited",
-      "notes": ""
-    },
-    "Idaho": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Illinois": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Indiana": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Iowa": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Kansas": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Kentucky": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Louisiana": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Maine": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Maryland": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Massachusetts": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Michigan": {
-      "regulation_type": "commercial",
-      "notes": ""
-    },
-    "Minnesota": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Mississippi": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Missouri": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Montana": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Nebraska": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Nevada": {
-      "regulation_type": "commercial",
-      "notes": ""
-    },
-    "New Hampshire": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "New Jersey": {
-      "regulation_type": "commercial",
-      "notes": ""
-    },
-    "New Mexico": {
-      "regulation_type": "tribal",
-      "notes": ""
-    },
-    "New York": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "North Carolina": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "North Dakota": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Ohio": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Oklahoma": {
-      "regulation_type": "tribal",
-      "notes": ""
-    },
-    "Oregon": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Pennsylvania": {
-      "regulation_type": "commercial",
-      "notes": ""
-    },
-    "Puerto Rico": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Rhode Island": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "South Carolina": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "South Dakota": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Tennessee": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Texas": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Utah": {
-      "regulation_type": "prohibited",
-      "notes": ""
-    },
-    "Vermont": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Virginia": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Washington": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "West Virginia": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Wisconsin": {
-      "regulation_type": "unknown",
-      "notes": ""
-    },
-    "Wyoming": {
-      "regulation_type": "unknown",
-      "notes": ""
-    }
+    "Alabama":              { "regulation_type": "tribal",      "notes": "Poarch Band of Creek Indians operates Wind Creek Atmore/Wetumpka/Montgomery. No commercial casinos. Electronic bingo halls (Greenetrack etc.) operate in legal gray zone." },
+    "Alaska":               { "regulation_type": "prohibited",  "notes": "Charity bingo and pull-tabs only; no casino-style gaming." },
+    "Arizona":              { "regulation_type": "tribal",      "notes": "Tribal-only via state compacts (~24 tribes). No commercial casinos." },
+    "Arkansas":             { "regulation_type": "commercial",  "notes": "Commercial casinos legalized 2018 — Oaklawn, Saracen Resort, Southland; plus parimutuel racing." },
+    "California":           { "regulation_type": "limited",     "notes": "~78 licensed cardrooms (CGCC) + tribal compacts. No commercial casinos. Cardrooms cannot bank house games." },
+    "Colorado":             { "regulation_type": "limited",     "notes": "Commercial gaming geographically restricted to Black Hawk, Central City, and Cripple Creek. Plus tribal (Ute Mountain, Sky Ute)." },
+    "Connecticut":          { "regulation_type": "tribal",      "notes": "Tribal-only — Foxwoods (Mashantucket Pequot) and Mohegan Sun (Mohegan Tribe). No commercial casinos." },
+    "Delaware":             { "regulation_type": "limited",     "notes": "Three racinos only — Delaware Park, Dover Downs (Bally's Dover), Harrington Raceway. No standalone commercial casinos." },
+    "District of Columbia": { "regulation_type": "prohibited",  "notes": "No casino or poker venues." },
+    "Florida":              { "regulation_type": "limited",     "notes": "Tribal (Seminole/Hard Rock) + parimutuel cardrooms + jai-alai. No commercial standalone casinos. Sports betting via Seminole compact." },
+    "Georgia":              { "regulation_type": "limited",     "notes": "No legal commercial gaming, but charity poker and gray-market rooms operate. State-line rooms exist near borders." },
+    "Hawaii":               { "regulation_type": "prohibited",  "notes": "Strict prohibition — one of two states with no legal gambling at all (no lottery, no charity gaming)." },
+    "Idaho":                { "regulation_type": "tribal",      "notes": "Tribal-only — Coeur d'Alene, Shoshone-Bannock, Kootenai. No commercial casinos." },
+    "Illinois":             { "regulation_type": "commercial",  "notes": "Commercial casinos (riverboats + land-based since 2019 expansion) + video gaming terminals + racinos." },
+    "Indiana":              { "regulation_type": "commercial",  "notes": "Riverboats and land-based commercial casinos + two racinos + tribal (Pokagon Four Winds South Bend)." },
+    "Iowa":                 { "regulation_type": "commercial",  "notes": "Commercial riverboats and land-based casinos; tribal also present (Meskwaki, Winnebago)." },
+    "Kansas":               { "regulation_type": "commercial",  "notes": "State-owned commercial casinos (Kansas Star, Boot Hill, Hollywood Kansas Speedway, Kansas Crossing) + tribal." },
+    "Kentucky":             { "regulation_type": "limited",     "notes": "Historical Horse Racing machines at racetracks (Churchill Downs, Keeneland, Red Mile, etc.); no commercial casinos. Charity gaming." },
+    "Louisiana":            { "regulation_type": "commercial",  "notes": "Riverboats + Harrah's New Orleans land-based + racinos + tribal (Coushatta, Tunica-Biloxi, Jena)." },
+    "Maine":                { "regulation_type": "commercial",  "notes": "Two commercial casinos — Hollywood Bangor (Penn Entertainment) and Oxford Casino (Churchill Downs)." },
+    "Maryland":             { "regulation_type": "commercial",  "notes": "Six commercial casinos — Live!, MGM National Harbor, Horseshoe Baltimore, Hollywood Perryville, Ocean Downs, Rocky Gap." },
+    "Massachusetts":        { "regulation_type": "commercial",  "notes": "Three commercial casinos — Encore Boston Harbor, MGM Springfield, Plainridge Park." },
+    "Michigan":             { "regulation_type": "commercial",  "notes": "Detroit commercial casinos (MGM Grand, MotorCity, Hollywood Greektown) + 22+ tribal venues." },
+    "Minnesota":            { "regulation_type": "tribal",      "notes": "Tribal-dominant (~18 tribal casinos). Two racinos with cardrooms (Canterbury Park, Running Aces) but no commercial casinos." },
+    "Mississippi":          { "regulation_type": "commercial",  "notes": "Gulf Coast and river commercial casinos (~25 total) + Choctaw tribal (Pearl River, Bok Homa)." },
+    "Missouri":             { "regulation_type": "commercial",  "notes": "Riverboat/dockside commercial casinos under MGC oversight; ~13 properties." },
+    "Montana":              { "regulation_type": "limited",     "notes": "Tavern-style gaming statewide (slot machines + small-stakes poker in bars/restaurants); no full commercial casinos." },
+    "Nebraska":             { "regulation_type": "commercial",  "notes": "Commercial casinos legalized via 2020 ballot initiative; operating at racetracks (WarHorse Lincoln, Grand Island, etc.)." },
+    "Nevada":               { "regulation_type": "commercial",  "notes": "Most permissive US gaming jurisdiction. NGCB regulates ~450+ nonrestricted licensees plus restricted (tavern) licenses." },
+    "New Hampshire":        { "regulation_type": "limited",     "notes": "Charitable gaming model — poker rooms operate as charity 'casinos' with stake limits and required charity payouts." },
+    "New Jersey":           { "regulation_type": "commercial",  "notes": "Atlantic City commercial casinos under DGE regulation; ~9 properties." },
+    "New Mexico":           { "regulation_type": "tribal",      "notes": "Tribal-dominant (~24 tribal venues); 5 racinos exist but tribal is the dominant venue type. No commercial casinos." },
+    "New York":             { "regulation_type": "commercial",  "notes": "Commercial casinos (Resorts World Catskills, Tioga Downs, Rivers Schenectady, del Lago, Rivers) + Seneca/Mohawk/Oneida tribal + racinos + downstate licenses pending." },
+    "North Carolina":       { "regulation_type": "tribal",      "notes": "Tribal-only — Eastern Band of Cherokee Indians (Harrah's Cherokee, Cherokee Valley River, Catawba Two Kings)." },
+    "North Dakota":         { "regulation_type": "tribal",      "notes": "Tribal + charity card rooms with limited stakes. No commercial casinos." },
+    "Ohio":                 { "regulation_type": "commercial",  "notes": "Four commercial casinos (Hollywood Columbus/Toledo, Hard Rock Cincinnati, JACK Cleveland) + 7 racinos." },
+    "Oklahoma":             { "regulation_type": "tribal",      "notes": "Tribal-dominant — largest concentration of tribal casinos in the US (~70+ Class III venues)." },
+    "Oregon":               { "regulation_type": "limited",     "notes": "Tribal (~11) + small social-gaming parlors / 'casinos' that operate under restricted licenses. No commercial standalone casinos." },
+    "Pennsylvania":         { "regulation_type": "commercial",  "notes": "PGCB regulates commercial casinos (Parx, Sands Bethlehem/Wind Creek, Rivers, Mohegan Pocono, Hollywood, Live!, etc.) + racinos." },
+    "Puerto Rico":          { "regulation_type": "commercial",  "notes": "Commercial casinos in tourist hotels under Puerto Rico Tourism Company regulation." },
+    "Rhode Island":         { "regulation_type": "commercial",  "notes": "Two commercial casinos — Bally's Twin River and Bally's Tiverton." },
+    "South Carolina":       { "regulation_type": "prohibited",  "notes": "No legal land-based casino gambling; offshore day-cruise gambling boats operate but not represented in this layer." },
+    "South Dakota":         { "regulation_type": "commercial",  "notes": "Deadwood limited-stakes commercial casinos + tribal (~12 tribal venues)." },
+    "Tennessee":            { "regulation_type": "prohibited",  "notes": "No commercial casinos, no tribal compacts. Lottery and fantasy sports legal but no brick-and-mortar gaming." },
+    "Texas":                { "regulation_type": "limited",     "notes": "Restrictive state law but extensive gray-market poker rooms operate (member-fee model). Only one tribal casino (Kickapoo Lucky Eagle); Naskila electronic gaming." },
+    "Utah":                 { "regulation_type": "prohibited",  "notes": "Strict prohibition — one of two states with no legal gambling of any kind." },
+    "Vermont":              { "regulation_type": "prohibited",  "notes": "No commercial or tribal casinos." },
+    "Virginia":             { "regulation_type": "commercial",  "notes": "Commercial casinos legalized 2020 — Hard Rock Bristol, Caesars Danville, Rivers Portsmouth, HeadWaters Norfolk pending." },
+    "Washington":           { "regulation_type": "limited",     "notes": "Tribal (~31 tribal venues) + ~50 licensed 'mini-casinos' / cardrooms with $5/$10 wager limits. No traditional commercial casinos." },
+    "West Virginia":        { "regulation_type": "commercial",  "notes": "Five commercial casinos (Hollywood Charles Town, Mountaineer, Wheeling Island, Mardi Gras, Greenbrier) — historically racinos but operate as full commercial." },
+    "Wisconsin":            { "regulation_type": "tribal",      "notes": "Tribal-only — ~25 tribal casinos under state compacts. No commercial casinos." },
+    "Wyoming":              { "regulation_type": "tribal",      "notes": "Tribal — Wind River, Northern Arapaho. Some racetracks and historic horse racing machines but tribal is dominant." }
   }
 }

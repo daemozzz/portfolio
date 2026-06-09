@@ -26,43 +26,65 @@
     </div>
 
     <div class="filter-bar">
-      <div class="filter-group filter-search">
-        <label class="filter-label">Search</label>
-        <input id="f-search" type="text" placeholder="Venue name…" autocomplete="off">
+      <div class="filter-bar-left">
+        <div class="filter-group filter-search">
+          <label class="filter-label">Search</label>
+          <input id="f-search" type="text" placeholder="Venue name…" autocomplete="off">
+        </div>
+
+        <div class="filter-group filter-group-state">
+          <label class="filter-label">State</label>
+          <button type="button" class="ms-button" id="ms-state-btn" aria-pressed="false">
+            <span class="ms-button-label is-placeholder">All states</span>
+            <span class="ms-button-arrow">▾</span>
+          </button>
+        </div>
+
+        <div class="filter-group filter-group-range">
+          <label class="filter-label">Min tables <span class="filter-hint" id="f-tables-val">any</span></label>
+          <input id="f-tables" type="range" min="0" max="100" step="1" value="0" disabled
+                 title="Field not yet in dataset">
+        </div>
+
+        <div class="filter-group filter-group-range">
+          <label class="filter-label">Min geocode score <span class="filter-hint" id="f-geo-val">0</span></label>
+          <input id="f-geo" type="range" min="0" max="1" step="0.05" value="0">
+        </div>
       </div>
 
-      <div class="filter-group filter-group-state">
-        <label class="filter-label">State</label>
-        <button type="button" class="ms-button" id="ms-state-btn" aria-pressed="false">
-          <span class="ms-button-label is-placeholder">All states</span>
-          <span class="ms-button-arrow">▾</span>
-        </button>
-      </div>
+      <div class="filter-bar-right">
+        <div class="filter-row-toggles">
+          <label class="toggle-chip">
+            <input id="f-hide-closed" type="checkbox">
+            <span>Hide closed</span>
+          </label>
+          <label class="toggle-chip">
+            <input id="f-has-website" type="checkbox">
+            <span>Has website</span>
+          </label>
+          <label class="toggle-chip" title="Show only venues confirmed to have poker (excludes unknown)">
+            <input id="f-has-poker" type="checkbox">
+            <span>Poker confirmed</span>
+          </label>
+          <label class="toggle-chip" title="Show only venues confirmed to have table games (excludes unknown)">
+            <input id="f-has-tables" type="checkbox">
+            <span>Table games confirmed</span>
+          </label>
+          <label class="toggle-chip" title="Hide venues where poker / table-game status is unknown">
+            <input id="f-hide-unknown" type="checkbox">
+            <span>Hide unknown</span>
+          </label>
+          <label class="toggle-chip" title="Show only venues confirmed via cross-source corroboration or regulator data — hides single-source / OSM-only / suspicious entries">
+            <input id="f-only-verified" type="checkbox" checked>
+            <span>Only verified</span>
+          </label>
+        </div>
 
-      <div class="filter-group filter-group-range">
-        <label class="filter-label">Min tables <span class="filter-hint" id="f-tables-val">any</span></label>
-        <input id="f-tables" type="range" min="0" max="100" step="1" value="0" disabled
-               title="Field not yet in dataset">
-      </div>
-
-      <div class="filter-group filter-group-range">
-        <label class="filter-label">Min geocode score <span class="filter-hint" id="f-geo-val">0</span></label>
-        <input id="f-geo" type="range" min="0" max="1" step="0.05" value="0">
-      </div>
-
-      <div class="filter-group filter-group-toggles">
-        <label class="toggle-chip">
-          <input id="f-hide-closed" type="checkbox">
-          <span>Hide closed</span>
-        </label>
-        <label class="toggle-chip">
-          <input id="f-has-website" type="checkbox">
-          <span>Has website</span>
-        </label>
-      </div>
-
-      <div class="filter-group filter-group-actions">
-        <button id="f-reset" class="btn-ghost btn-compact" type="button">Reset</button>
+        <div class="filter-row-actions">
+          <button id="f-open-table" class="btn-ghost btn-compact" type="button" title="Open the attribute table for the current filter set (no spatial selection needed)">▦ Open table</button>
+          <button id="f-select-area" class="btn-ghost btn-compact" type="button" title="Drag a rectangle on the map to select venues">▭ Select area</button>
+          <button id="f-reset" class="btn-ghost btn-compact" type="button">Reset</button>
+        </div>
       </div>
     </div>
   </header>
@@ -79,6 +101,84 @@
       <div id="map-error" class="map-overlay" style="display:none;">
         <div class="overlay-text overlay-err">Signal lost</div>
         <div class="overlay-sub">Map data temporarily unavailable.</div>
+      </div>
+
+      <!-- Drag-box overlay (visible only during select mode) -->
+      <div id="select-box" class="select-box" hidden></div>
+      <div id="select-mode-banner" class="select-mode-banner" hidden>
+        <span>Drag a rectangle to select venues</span>
+        <span class="select-mode-hint">ESC to cancel</span>
+      </div>
+
+      <!-- Attribute table panel (opens after a selection is committed) -->
+      <div id="attr-panel" class="float-panel float-panel-attr" hidden>
+        <div class="float-panel-header" id="attr-panel-drag">
+          <span class="float-panel-title">ATTRIBUTE TABLE — <span id="attr-count">0</span> SELECTED</span>
+          <div class="float-panel-actions">
+            <button type="button" class="float-panel-collapse" id="attr-panel-collapse" aria-expanded="true" title="Collapse / expand">▾</button>
+            <button type="button" class="float-panel-close" id="attr-panel-close" title="Close">✕</button>
+          </div>
+        </div>
+        <div class="float-panel-body" id="attr-panel-body">
+          <div class="attr-toolbar">
+            <input id="attr-name-filter" type="text" placeholder="Filter by venue name…" autocomplete="off">
+            <label class="toggle-chip attr-toggle" title="Hide all venues except the current selection on the map">
+              <input id="attr-only-selected" type="checkbox">
+              <span>Show only selected on map</span>
+            </label>
+            <span class="attr-shown" id="attr-shown">— rows shown</span>
+            <button id="attr-export" class="btn-icon" type="button" title="Download visible rows as CSV">⤓</button>
+            <button id="attr-clear" class="btn-icon" type="button" title="Clear selection">✕</button>
+          </div>
+          <div id="attr-cap-banner" class="attr-cap-banner" hidden></div>
+          <div class="attr-table-wrap" id="attr-table-wrap">
+            <table class="attr-table" id="attr-table">
+              <thead id="attr-thead"></thead>
+              <tbody id="attr-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating draggable legend -->
+      <div id="halo-legend" class="float-panel float-panel-legend">
+        <div class="float-panel-header" id="halo-legend-drag">
+          <span class="float-panel-title">LEGEND</span>
+          <div class="float-panel-actions">
+            <button type="button" class="float-panel-collapse" id="halo-legend-collapse" aria-expanded="true" title="Collapse / expand">▾</button>
+          </div>
+        </div>
+        <div class="float-panel-body" id="halo-legend-body">
+          <div class="halo-row">
+            <span class="halo-swatch swatch-poker"></span>
+            <span class="halo-text">
+              <span class="halo-label">Poker confirmed</span>
+              <span class="halo-sub">green outline</span>
+            </span>
+          </div>
+          <div class="halo-row">
+            <span class="halo-swatch swatch-tables"></span>
+            <span class="halo-text">
+              <span class="halo-label">Table games confirmed</span>
+              <span class="halo-sub">white outline</span>
+            </span>
+          </div>
+          <div class="halo-row">
+            <span class="halo-swatch swatch-none"></span>
+            <span class="halo-text">
+              <span class="halo-label">No poker, no tables (confirmed)</span>
+              <span class="halo-sub">black outline</span>
+            </span>
+          </div>
+          <div class="halo-row">
+            <span class="halo-swatch swatch-unknown"></span>
+            <span class="halo-text">
+              <span class="halo-label">Unknown</span>
+              <span class="halo-sub">no outline</span>
+            </span>
+          </div>
+          <div class="halo-meta">Pin opacity = geocode confidence (rooftop ◯ → city-centroid ◌)</div>
+        </div>
       </div>
 
       <!-- Floating draggable state panel -->
@@ -186,7 +286,7 @@
           <div class="layer-row">
             <label>
               <input type="checkbox" checked data-cat="Casino">
-              <span class="cat-dot" style="background:#ef4444"></span>
+              <span class="cat-dot" style="background:#3b82f6"></span>
               <span class="cat-label">Casino</span>
               <span class="cat-count" data-count-for="Casino">—</span>
             </label>
@@ -202,7 +302,7 @@
           <div class="layer-row">
             <label>
               <input type="checkbox" checked data-cat="Racetrack">
-              <span class="cat-dot" style="background:#10b981"></span>
+              <span class="cat-dot" style="background:#ec4899"></span>
               <span class="cat-label">Racetrack</span>
               <span class="cat-count" data-count-for="Racetrack">—</span>
             </label>
@@ -210,7 +310,7 @@
           <div class="layer-row">
             <label>
               <input type="checkbox" checked data-cat="Poker / Card Club">
-              <span class="cat-dot" style="background:#3b82f6"></span>
+              <span class="cat-dot" style="background:#ef4444"></span>
               <span class="cat-label">Poker / Card Club</span>
               <span class="cat-count" data-count-for="Poker / Card Club">—</span>
             </label>

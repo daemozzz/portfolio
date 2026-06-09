@@ -1,2 +1,19 @@
 .vercel
 .scratch/
+
+# --- Never commit client/PII exports (CardOpz reports, member/player data) ---
+*.xlsx
+*.xls
+
+# --- Working backups / pipeline snapshots (local only) ---
+*.bak
+*_bak
+*.audit_bak
+
+# --- Python build artifacts ---
+__pycache__/
+*.pyc
+
+# --- Scrape-source tooling kept local (avoid exposing data sources) ---
+# (remove this block if you decide to publish the scrapers)
+scrapers/
