@@ -151,16 +151,18 @@
 
   // Opacity encodes both operational status and geocode confidence so the
   // map honestly conveys data trust. Closed → strongly dimmed. Active →
-  // tiered by accuracy_type so a city-centroid pin doesn't pretend to
-  // have the same authority as a rooftop one.
+  // tiered by the numeric accuracy score so a city-centroid pin doesn't
+  // pretend to have the same authority as a rooftop one. (Score is used
+  // instead of accuracy_type so no data-source name is ever exposed.)
   var opacityExpr = [
     "case",
     ["==", ["get", "operational_status"], "closed"], 0.25,
-    ["match", ["get", "geocode_accuracy_type"],
-      ["place", "state"], 0.45,
-      ["street_center"], 0.65,
-      ["wikidata", "nearest_rooftop_match"], 0.85,
-      0.95
+    ["interpolate", ["linear"],
+      ["to-number", ["get", "geocode_accuracy_score"], 0.9],
+      0,   0.45,
+      0.5, 0.60,
+      0.8, 0.80,
+      1,   0.95
     ]
   ];
 
@@ -691,44 +693,17 @@
       parts.push('<div class="venue-row" style="font-size:11px;color:var(--text-mute);font-style:italic;">formerly: ' + esc(priorMatch[1].trim()) + "</div>");
     }
 
-    // Data sources
-    if (p.data_source) {
-      var srcs = p.data_source.split("|").map(function (s) { return s.trim(); }).filter(Boolean);
-      if (srcs.length) {
-        parts.push('<div class="venue-row" style="font-size:11px;color:var(--text-mute);">sources: ' + esc(srcs.join(", ")) + "</div>");
-      }
-    }
-
     if (p.manual_review === "True") {
       parts.push('<div class="venue-row" style="font-size:11px;color:#eab308;font-weight:600;">⚠ Flagged for review</div>');
     }
 
-    if (p.operational_notes) {
-      parts.push('<div class="venue-notes">' + esc(p.operational_notes) + "</div>");
-    }
-
-    // Full attribute dump
-    var hiddenKeys = {
-      venue_name: 1, venue_category: 1, city: 1, state: 1, street: 1,
-      website: 1, num_employees: 1, revenue_range: 1, num_tables: 1, operational_notes: 1,
-      has_poker: 1, has_table_games: 1, data_source: 1, manual_review: 1
-    };
-    var extraRows = [];
-    Object.keys(p).forEach(function (k) {
-      if (hiddenKeys[k]) return;
-      var v = p[k];
-      if (v === null || v === undefined || v === "") return;
-      extraRows.push(
-        '<tr><td class="attr-k">' + esc(k) + '</td><td class="attr-v">' + esc(String(v)) + "</td></tr>"
-      );
-    });
-    if (extraRows.length) {
-      parts.push(
-        '<details class="venue-details">' +
-          "<summary>All attributes (" + extraRows.length + ")</summary>" +
-          '<table class="attr-table">' + extraRows.join("") + "</table>" +
-        "</details>"
-      );
+    // Contact info — whitelisted to neutral tags only (no provenance/source data
+    // is ever rendered, even if upstream data still carries it)
+    var noteTags = String(p.operational_notes || "").split("|")
+      .map(function (s) { return s.trim(); })
+      .filter(function (s) { return /^(tel|operator)\s*:/i.test(s); });
+    if (noteTags.length) {
+      parts.push('<div class="venue-notes">' + esc(noteTags.join("  ·  ")) + "</div>");
     }
 
     parts.push("</div>");
@@ -991,13 +966,8 @@
       ["contact_known",           "Contact?", "col-bool"],
       ["num_employees",           "Employees"],
       ["revenue_range",           "Revenue"],
-      ["data_source",             "Sources"],
-      ["geocode_status",          "Geocode Status"],
       ["operational_status",      "Operational"],
       ["operational_notes",       "Notes"],
-      ["geocodio_ready",          "Geo Ready", "col-bool"],
-      ["geocode_accuracy_type",   "Accuracy Type"],
-      ["geocode_accuracy_score",  "Accuracy Score"],
       ["county",                  "County"],
       ["manual_review",           "Manual Review", "col-bool"],
       ["__lat",                   "Latitude"],

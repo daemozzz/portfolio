@@ -17,3 +17,9 @@ __pycache__/
 # --- Scrape-source tooling kept local (avoid exposing data sources) ---
 # (remove this block if you decide to publish the scrapers)
 scrapers/
+
+# --- Master/source data with full provenance — keep LOCAL, publish only the
+#     sanitized casinos_social_clubs.geojson the map actually uses ---
+geodata/master_venues.csv
+geodata/master_venues_meta.json
+geodata/geocodio_*.csv

@@ -45,6 +45,53 @@ body {
   flex-direction: column;
 }
 
+/* ===== PORTFOLIO RETURN BAR — matches daemoz.neocities.org nav feel ===== */
+.portfolio-bar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 24px;
+  padding: 0 12px;
+  background: #050510;
+  border-bottom: 1px solid rgba(0, 245, 212, 0.25);
+  font-family: 'Press Start 2P', 'Share Tech Mono', monospace;
+  z-index: 30;
+}
+.portfolio-bar .pb-home {
+  font-size: 8px;
+  line-height: 1;
+  color: #00f5d4;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border: 1px solid #00b89c;
+  background: rgba(0, 245, 212, 0.05);
+  transition: all 0.15s;
+}
+.portfolio-bar .pb-home::before { content: '< '; color: #bf5fff; }
+.portfolio-bar .pb-home:hover {
+  background: rgba(0, 245, 212, 0.15);
+  border-color: #00f5d4;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+}
+.portfolio-bar .pb-here {
+  font-size: 7px;
+  line-height: 1;
+  color: #6a9e97;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 600px) {
+  .portfolio-bar .pb-here { display: none; }
+}
+
 /* ========== HEADER ========== */
 .app-header {
   flex: 0 0 auto;
