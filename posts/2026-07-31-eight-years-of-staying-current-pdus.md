@@ -24,16 +24,16 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 170 approved PDU claims, spanning **March 2, 2018 → July 29, 2026** — roughly three full PMI renewal cycles plus the start of a fourth. The raw export is just two fields: the date PMI approved the claim, and the title of the session. 
 
-- | Year | Ways of Working | Power Skills | Business Acumen | Total |
-- | 2018 | 2 | 9 | 3 | 14 |
-- | 2019 | 11 | 20 | 3 | 34 |
-- | 2020 | 4 | 4 | 3 | 11 |
-- | 2021 | 5 | 9 | 2 | 16 |
-- | 2022 | 7 | 15 | 13 | 35 |
-- | 2023 | 3 | 4 | 2 | 9 |
-- | 2024 | 2 | 3 | 2 | 7 |
-- | 2025 | 7 | 16 | 7 | 30 |
-- | 2026 | 4 | 9 | 1 | 14 |
+- | Year | Ways of Working | Power Skills | Business Acumen | Total |.
+- | 2018 | 2 | 9 | 3 | 14 |.
+- | 2019 | 11 | 20 | 3 | 34 |.
+- | 2020 | 4 | 4 | 3 | 11 |.
+- | 2021 | 5 | 9 | 2 | 16 |.
+- | 2022 | 7 | 15 | 13 | 35 |.
+- | 2023 | 3 | 4 | 2 | 9 |.
+- | 2024 | 2 | 3 | 2 | 7 |.
+- | 2025 | 7 | 16 | 7 | 30 |.
+- | 2026 | 4 | 9 | 1 | 14 |.
 
 *2026 is partial — through July 29.*
 
