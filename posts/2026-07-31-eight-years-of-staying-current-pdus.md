@@ -145,16 +145,29 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 - 27-Jun-24,   The Immediate Benefits of Adopting Generative AI for Project Management
 
 - 20-Mar-24,   Exponential Leadership
+- 
 - 3-Feb-24,   HBR: It's Time to End the Battle between Waterfall and Agile
+- 
 - 24-Aug-23,   The Bridge to Belonging
+- 
 - 26-Jul-23,   The ‘Fix It’ Economy - Opportunities for Project Management
+- 
 - 19-Jul-23,   Managing a Software Development Team: Must Have Skills for both Development and Project Managers
+- 
 - 20-Jun-23,   Commonality-Variability Analysis
+- 
 - 19-Apr-23,   Churn in Agile
+- 
 - 22-Mar-23,   Low Code/No Code & Traditional Development
+- 
 - 21-Mar-23,   Project HEADWAY: Stakeholder Perceptions Are Everything
+- 
 - 21-Mar-23,   Governance of Innovation in Portfolios
+
+- 
 - 30-Jan-23,   Closing the Agile Loop of Continuous Delivery
+
+- 
 - 9-Dec-22,   Best Practices for Sprint Planning
 - 19-Oct-22,   The Spotify Model: The Ultimate Beginner's Guide
 - 18-Oct-22,   How Supply Chains Can Be More Resilient by Practicing Lean
