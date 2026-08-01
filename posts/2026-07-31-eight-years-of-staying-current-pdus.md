@@ -164,7 +164,6 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 - 21-Mar-23,   Governance of Innovation in Portfolios
 
-
 - 30-Jan-23,   Closing the Agile Loop of Continuous Delivery
 
 - 9-Dec-22,   Best Practices for Sprint Planning
@@ -224,7 +223,6 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 - 8-Feb-22,   Navigating Tactful Negotiation
 
 - 2-Feb-22,   Delivering Projects from Idea to Customer Using the Disciplined Agile Toolkit
-
 
 - 31-Jan-22,   The Disciplined Approach to Change
 
