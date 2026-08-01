@@ -26,51 +26,48 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 - | Year | Ways of Working | Power Skills | Business Acumen | Total |.
 
-- | 2018 | 2 | 9 | 3 | 14 |.
+- | 2018 | 2 | 9 | 3 | 14
 
-- | 2019 | 11 | 20 | 3 | 34 |.
+- | 2019 | 11 | 20 | 3 | 34
 
-- | 2020 | 4 | 4 | 3 | 11 |.
+- | 2020 | 4 | 4 | 3 | 11
 
-- | 2021 | 5 | 9 | 2 | 16 |.
+- | 2021 | 5 | 9 | 2 | 16 
 
-- | 2022 | 7 | 15 | 13 | 35 |.
+- | 2022 | 7 | 15 | 13 | 35
 
-- | 2023 | 3 | 4 | 2 | 9 |.
+- | 2023 | 3 | 4 | 2 | 9
 
-- | 2024 | 2 | 3 | 2 | 7 |.
+- | 2024 | 2 | 3 | 2 | 7
 
-- | 2025 | 7 | 16 | 7 | 30 |.
+- | 2025 | 7 | 16 | 7 | 30
 
-- | 2026 | 4 | 9 | 1 | 14 |.
+- | 2026 | 4 | 9 | 1 | 14
 
-*2026 is partial — through July 29.*
+**PDU_Claim_Approved,  ProjectManagement.com_PDU_Title**
 
-
-
-**PDU_Claim_Approved,ProjectManagement.com_PDU_Title**
-- 29-Jul-26,   Exploring Power Skills in Practice
-- 27-Jul-26,   Virtual Practices as a Game Changer in Project Stakeholder Management
-- 23-Jul-26,   Project HEADWAY: Can Project and Product Management Coexist?
-- 23-Jul-26,   Project HEADWAY: Managing Contract Teams
-- 22-May-26,   Supporting a Change Journey to Anywhere
-- 20-May-26,   Enterprise Agility Executive Voices
-- 20-May-26,   Agile in 2026: From Practice to Enterprise Agility—Bridging Delivery and Decision Making
-- 18-May-26,   AI + Human Intelligence in Leadership: A New Mindset for Leaders
-- 28-Apr-26,   Mastering the Art of You vs You
-- 28-Apr-26,   Diagnosing & Designing for Breakthroughs
-- 24-Apr-26,   Is Agile Dead
-- 8-Feb-26,   Project-Driven Organization: Beyond Agile—Build a Company That Puts Projects at Its Core
-- 27-Jan-26,   Beyond Q&A: Plan and Conduct Stakeholder Interviews Like a Pro
-- 27-Jan-26,   Decision-Making Under Pressure in the Era of AI
-- 2-Oct-25,   Overcoming AI Fear: The Impostor Syndrome in the Age of AI
-- 1-Oct-25,   Your Methodology Fails Your Project Objectives
-- 1-Oct-25,   Power Skills for Successfully Interacting with Your Leaders
-- 1-Oct-25,   Critical Path Drag: Deliver Faster!
-- 1-Oct-25,   At the Table: Project Professionals and Strategic Decision-Making
-- 30-Sep-25,   Reigniting Engagement: Passion
-- 30-Sep-25,   Project HEADWAY: Confronting Failure
-- 30-Sep-25,   The State of the PMI Educational Foundation
+- 29-Jul-26,     Exploring Power Skills in Practice
+- 27-Jul-26,     Virtual Practices as a Game Changer in Project Stakeholder Management
+- 23-Jul-26,     Project HEADWAY: Can Project and Product Management Coexist?
+- 23-Jul-26,     Project HEADWAY: Managing Contract Teams
+- 22-May-26,     Supporting a Change Journey to Anywhere
+- 20-May-26,     Enterprise Agility Executive Voices
+- 20-May-26,     Agile in 2026: From Practice to Enterprise Agility—Bridging Delivery and Decision Making
+- 18-May-26,     AI + Human Intelligence in Leadership: A New Mindset for Leaders
+- 28-Apr-26,     Mastering the Art of You vs You
+- 28-Apr-26,     Diagnosing & Designing for Breakthroughs
+- 24-Apr-26,     Is Agile Dead
+- 8-Feb-26,     Project-Driven Organization: Beyond Agile—Build a Company That Puts Projects at Its Core
+- 27-Jan-26,     Beyond Q&A: Plan and Conduct Stakeholder Interviews Like a Pro
+- 27-Jan-26,     Decision-Making Under Pressure in the Era of AI
+- 2-Oct-25,     Overcoming AI Fear: The Impostor Syndrome in the Age of AI
+- 1-Oct-25,     Your Methodology Fails Your Project Objectives
+- 1-Oct-25,     Power Skills for Successfully Interacting with Your Leaders
+- 1-Oct-25,     Critical Path Drag: Deliver Faster!
+- 1-Oct-25,     At the Table: Project Professionals and Strategic Decision-Making
+- 30-Sep-25,     Reigniting Engagement: Passion
+- 30-Sep-25,     Project HEADWAY: Confronting Failure
+- 30-Sep-25,     The State of the PMI Educational Foundation
 - 29-Sep-25,   Mastering Business Acumen: Live Q&A with Project Management Experts
 - 29-Sep-25,   Insights from Women Leaders: Journeys to Success in Project Management
 - 29-Sep-25,   How Products Get Made: Perspectives from the Agile Alliance Product Management Initiative
