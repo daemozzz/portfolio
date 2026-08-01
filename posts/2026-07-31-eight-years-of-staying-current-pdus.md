@@ -27,17 +27,17 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 - | Year | Ways of Working | Power Skills | Business Acumen | Total |.
 
 - | 2018 | 2 | 9 | 3 | 14 |.
- 
+
 - | 2019 | 11 | 20 | 3 | 34 |.
- 
+
 - | 2020 | 4 | 4 | 3 | 11 |.
- 
+
 - | 2021 | 5 | 9 | 2 | 16 |.
- 
+
 - | 2022 | 7 | 15 | 13 | 35 |.
- 
+
 - | 2023 | 3 | 4 | 2 | 9 |.
- 
+
 - | 2024 | 2 | 3 | 2 | 7 |.
 
 - | 2025 | 7 | 16 | 7 | 30 |.
