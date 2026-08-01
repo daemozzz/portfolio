@@ -47,54 +47,103 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 **PDU_Claim_Approved,  ProjectManagement.com_PDU_Title**
 
 - 29-Jul-26,     Exploring Power Skills in Practice
+
 - 27-Jul-26,     Virtual Practices as a Game Changer in Project Stakeholder Management
+
 - 23-Jul-26,     Project HEADWAY: Can Project and Product Management Coexist?
+
 - 23-Jul-26,     Project HEADWAY: Managing Contract Teams
+
 - 22-May-26,     Supporting a Change Journey to Anywhere
+
 - 20-May-26,     Enterprise Agility Executive Voices
+
 - 20-May-26,     Agile in 2026: From Practice to Enterprise Agility—Bridging Delivery and Decision Making
+
 - 18-May-26,     AI + Human Intelligence in Leadership: A New Mindset for Leaders
+
 - 28-Apr-26,     Mastering the Art of You vs You
+
 - 28-Apr-26,     Diagnosing & Designing for Breakthroughs
+
 - 24-Apr-26,     Is Agile Dead
+
 - 8-Feb-26,     Project-Driven Organization: Beyond Agile—Build a Company That Puts Projects at Its Core
+
 - 27-Jan-26,     Beyond Q&A: Plan and Conduct Stakeholder Interviews Like a Pro
+
 - 27-Jan-26,     Decision-Making Under Pressure in the Era of AI
+
 - 2-Oct-25,     Overcoming AI Fear: The Impostor Syndrome in the Age of AI
+
 - 1-Oct-25,     Your Methodology Fails Your Project Objectives
+
 - 1-Oct-25,     Power Skills for Successfully Interacting with Your Leaders
+
 - 1-Oct-25,     Critical Path Drag: Deliver Faster!
+
 - 1-Oct-25,     At the Table: Project Professionals and Strategic Decision-Making
+
 - 30-Sep-25,     Reigniting Engagement: Passion
+
 - 30-Sep-25,     Project HEADWAY: Confronting Failure
+
 - 30-Sep-25,     The State of the PMI Educational Foundation
+
 - 29-Sep-25,   Mastering Business Acumen: Live Q&A with Project Management Experts
+
 - 29-Sep-25,   Insights from Women Leaders: Journeys to Success in Project Management
+
 - 29-Sep-25,   How Products Get Made: Perspectives from the Agile Alliance Product Management Initiative
+
 - 25-Sep-25,   Resilience
+
 - 25-Sep-25,   Feel The Mood: Using Change Readiness To Drive A Successful Agile Implementation
+
 - 25-Sep-25,   Project HEADWAY: Getting Past The Difficult Conversations
+
 - 25-Sep-25,   Advancing Complex Research Through Project Management: The PMI–MIT Lincoln Laboratory Partnership
+
 - 24-Sep-25,   Sponsorship Reimagined: The Missing Link to M.O.R.E. Project Success
+
 - 7-Jul-25,   Filing Effective Ethics Complaints for Project Management Institute
+
 - 7-Jul-25,   Upruption - Transforming Business Ecosystems
+
 - 6-May-25,   The Illusion of Control: Why True Agility Requires Letting Go
+
 - 3-May-25,   In My Shoes: PMI Culture - A Conversation on Inclusivity and Belonging
+
 - 2-May-25,   In My Shoes Webinar Series: Community Perspectives: The Future of Project Management
+
 - 28-Apr-25,   PERT Variance & Project Probabilities
+
 - 28-Apr-25,   Mastering the Art of De-escalation
+
 - 16-Apr-25,   Mastering the 7 Patterns of AI for AI Project Success
+
 - 15-Apr-25,   Keeping yourself
+
 - 15-Apr-25,   Project HEADWAY: Owning Product Ownership
+
 - 3-Apr-25,   "Keynote Address: The Simpsons: There's no ""I"" in ""Innovation"" (oh wait"
+
 - 2-Apr-25,   Sponsorship 101 - English
+
 - 21-Mar-25,   Building Strategic Capabilities for Enhanced Project Success and Career Growth
+
 - 21-Mar-25,   Earned Value Management with Gen AI
+
 - 30-Dec-24,   Risks and Opportunities in Technology Projects
+
 - 4-Dec-24,   An Executive's Guide to Disciplined Agile
+
 - 11-Nov-24,   Project Success Defined and Measured
+
 - 11-Nov-24,   How Digitalization Affects Project Management – Evidence from Two Case Studies in the Construction Industry
+
 - 27-Jun-24,   The Immediate Benefits of Adopting Generative AI for Project Management
+
 - 20-Mar-24,   Exponential Leadership
 - 3-Feb-24,   HBR: It's Time to End the Battle between Waterfall and Agile
 - 24-Aug-23,   The Bridge to Belonging
