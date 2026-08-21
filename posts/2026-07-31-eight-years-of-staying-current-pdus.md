@@ -1,5 +1,5 @@
 ---
-title: Eight Years, 170 Sessions — What My PDU History Says About How I Keep Learning
+title: Eight Years, 180 Sessions — What My PDU History Says About How I Keep Learning
 date: 2026-07-31
 category: Project Management
 tags: [Continuing Education, PMP, PDUs, Talent Triangle, Data Aggregation & Management, Career Timeline]
@@ -45,7 +45,8 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 - | 2026 | 4 | 9 | 1 | 14
 
-<img src="https://neocities.org" alt="PMP PDU 2026" style="max-width: 100%; height: auto; display: block; margin: 15px auto;">
+<img src="[https://neocities.org](https://daemoz.neocities.org/misc/pmp_pdu_2026.png)" alt="PMP PDU 2026" style="max-width: 100%; height: auto; display: block; margin: 15px auto; box-sizing: border-box;">
+
 
 **PDU_Claim_Approved,  ProjectManagement.com_PDU_Title**
 
