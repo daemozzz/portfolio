@@ -46,12 +46,7 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 - | 2026 | 4 | 9 | 1 | 14
 
 
-
-<div style="width: 100%; max-width: 100%; display: block; box-sizing: border-box; overflow: hidden; padding: 0;">
-  <img src="https://daemoz.neocities.org/misc/pmp_pdu_2026.png" 
-       alt="PMP PDU Dashboard 2026" 
-       style="width: 100% !important; max-width: 100% !important; height: auto !important; display: block !important; box-sizing: border-box !important;">
-</div>
+<img src="https://daemoz.neocities.org/misc/pmp_pdu_2026.png" alt="PMP PDU chart 2026" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 
 
 
