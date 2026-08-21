@@ -45,7 +45,7 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 - | 2026 | 4 | 9 | 1 | 14
 
-<img src="https://neocities.org" alt="PMP PDU 2026" style="max-width: 100%; height: auto; display: block;">
+<img src="https://neocities.org" alt="PMP PDU 2026" style="max-width: 100%; height: auto; display: block; margin: 15px auto;">
 
 **PDU_Claim_Approved,  ProjectManagement.com_PDU_Title**
 
