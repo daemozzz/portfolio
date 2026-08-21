@@ -6,8 +6,9 @@ tags: [Continuing Education, PMP, PDUs, Talent Triangle, Data Aggregation & Mana
 excerpt: I pulled every Accepted PDU I've logged with PMI since 2018 into one dataset for achrival/fun. Some expected patterns and a bit lopsided on Power Skills.
 ---
 
-# Eight Years, 170 Sessions — What My PDU History Says About How I Keep Learning
-
+# Eight Years, 180 Sessions — What My PDU History Says About How I Keep Learning
+- Edited 8/21 to add the final 10 PDUs needed for next renewal cycle
+  
 ## Why I Pulled This Data
 
 Maintaining a PMP requires every three years I show PMI 60 Professional Development Units (PDUs), and every one of those units has to trace back to something I actually did: a course, a webinar, a conference session, a piece of volunteer work. PMI buckets all of it under what they call the **Talent Triangle** — three skill domains they consider essential to the modern practitioner:
@@ -22,7 +23,7 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 ## Data
 
-170 approved PDU claims, spanning **March 2, 2018 → July 29, 2026** — roughly three full PMI renewal cycles plus the start of a fourth. The raw export is just two fields: the date PMI approved the claim, and the title of the session. 
+180 approved PDU claims, spanning **March 2, 2018 → July 29, 2026** — roughly three full PMI renewal cycles plus the start of a fourth. The raw export is just two fields: the date PMI approved the claim, and the title of the session. 
 
 - | Year | Ways of Working | Power Skills | Business Acumen | Total |.
 
@@ -44,7 +45,29 @@ I export my *Accepted* claims from pmi.org periodically, mostly to sanity-check 
 
 - | 2026 | 4 | 9 | 1 | 14
 
+<img src="https://daemoz.neocities.org/misc/pmp_pdu_2026.png" alt="PMP PDU 2026 Image">
+
 **PDU_Claim_Approved,  ProjectManagement.com_PDU_Title**
+
+- 20 Aug 2026,	Breaking The Triangle: What To Cut When Cuts Loom Over Your Project
+
+- 20 Aug 2026,	Real-World Lessons in Project Management
+
+- 17 Aug 2026,	Project HEADWAY: How Not To Use AI	
+
+- 17 Aug 2026,	From Execution to Impact: How APAC Project Professionals Drive Success with M.O.R.E.
+
+- 17 Aug 2026,	Navigating Complex Projects in a Complex World	
+
+- 12 Aug 2026,	The Agile Enterprise. Scaled Agile Frameworks. An Ethical Perspective
+
+- 07 Aug 2026,	The LTE Execution Triangle	
+
+- 04 Aug 2026,	In My Shoes-One Culture, Many Times Zones: Building Belonging in a Fully Distributed Workforce
+
+- 03 Aug 2026,	Transforming PMOs for Tomorrow: The Rise of the Chief Project Officer Role
+
+- 31 Jul 2026,	Ethics Under Pressure: Why Good People Make Dangerous Decisions	Approved
 
 - 29-Jul-26,     Exploring Power Skills in Practice
 
