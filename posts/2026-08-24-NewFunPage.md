@@ -1,9 +1,9 @@
 ---
-title: Updated the 3D model page to support GBL for textures
+title: Updated the FUnpage with GBL Model support for textures
 date: 2026-08-24
-category: 3D Modeling Fun
-tags: [STL, GBL, Textures Mesh for 3d models, updated Model viewer API]
-excerpt: This page was a placeholder, which is now functional with an improved viewer and samples of my work.
+category: MISC
+tags: [neocities, web, models]
+excerpt: Updating the placeholder to a bit of a showcase
 ---
 
 # Updated the 3D model page to support .GBL for textures & Added Some
