@@ -47,9 +47,13 @@ Pulled wheel to find CV axel boot exploded grease everywhere, spent time deep cl
 
 Wheel back off, coilover came off with a little fight, but it came off!  I couldnt take the top axel nut off, but no worries, i have a full assembly with the new tophat with a bearing (what was grinding/popping i think).  Driver side has all new suspension, the tie rods & joints ahve all been replaced in last 4 years. I do need to complete passanger side now - but no rush.Clunks gone.  
 
-**good resource:** - <a href="[https://example.com](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)">https://www.youtube.com/watch?v=w1TVZ2ZOa5A</a>  
+**good resource:**
+
+<a href="[https://example.com](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)">https://www.youtube.com/watch?v=w1TVZ2ZOa5A</a>  
+
+My Raceland Coilover Journey - Part 1 - Part 2 concludes in him by a different set of coilovers, he never did totally chase out the clunk, but ive been using these for 14+ years - i installed them in Denver in a freezing garage.
  
- ** Torque Specs: **
+**Torque Specs:**
 
 Front nuts and bolts that hold shock assembly to brake assembly(2 on each side):
 116ft lbs. (includes oem replacement bolts)
