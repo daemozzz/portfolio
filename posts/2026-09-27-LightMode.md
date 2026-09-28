@@ -90,8 +90,10 @@ Rear bolt that holds brackets and bushings on rear sway:
 Rear bolt that holds bottom of rear shock:
 45ft lbs
 
-Rear two shock tower nuts:
+Rear two shaock tower nuts:
 43ft lbs
+
+WTF - Hows this text bigger?
 ---
 
 *Next up: Been busy with 3d printing, working on the Skydiving helmet com cover, todays print was not idea.  
