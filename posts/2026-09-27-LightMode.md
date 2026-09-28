@@ -1,6 +1,6 @@
 ---
 title: And Then there was light (Mode)
-date: 2026-09-27
+date: 2026-09-27 
 category: Webdev
 tags: [CSS, CARTO, GUI]
 excerpt: Cyberpunks fun and all, but who can read this crayonbox?  I needed to fix the carto API key change, and wanted to scale up some of the tiny tags, while i was at it got inspired enough to make a light mode that is hopefully easier to read.
