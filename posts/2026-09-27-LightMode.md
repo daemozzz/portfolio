@@ -47,7 +47,7 @@ Pulled wheel to find CV axel boot exploded grease everywhere, spent time deep cl
 
 Wheel back off, coilover came off with a little fight, but it came off!  I couldnt take the top axel nut off, but no worries, i have a full assembly with the new tophat with a bearing (what was grinding/popping i think).  Driver side has all new suspension, the tie rods & joints ahve all been replaced in last 4 years. I do need to complete passanger side now - but no rush.Clunks gone.  
 
-**good resource:** - https://www.youtube.com/watch?v=w1TVZ2ZOa5A
+**good resource:** - <a href="[https://example.com](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)">https://www.youtube.com/watch?v=w1TVZ2ZOa5A</a>  
  
  ** Torque Specs: **
 
