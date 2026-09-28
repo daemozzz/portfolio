@@ -51,8 +51,7 @@ Wheel back off, coilover came off with a little fight, but it came off!  I could
 
 My Raceland Coilover Journey - Part 1 - Part 2 concludes in him by a different set of coilovers, he never did totally chase out the clunk, but ive been using these for 14+ years - i installed them in Denver in a freezing garage.
 
-<a href="[https://www.youtube.com/watch?v=w1TVZ2ZOa5A](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)"></a>  
-  check it [https://www.youtube.com/watch?v=w1TVZ2ZOa5A](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)
+[https://www.youtube.com/watch?v=w1TVZ2ZOa5A](https://www.youtube.com/watch?v=w1TVZ2ZOa5A)
 
  
 **Torque Specs:**
